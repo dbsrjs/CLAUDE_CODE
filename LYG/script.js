@@ -9,97 +9,47 @@
 const projects = [
     {
         id: 1,
-        title: "wmg_puzzle (2D 팀 프로젝트)",
-        desc: "SBS게임아카데미에서 팀으로 진행한 2D 퍼즐 게임. 기획부터 개발까지 협업 경험.",
-        fullDesc: "SBS게임아카데미에서 팀 프로젝트로 진행한 2D 퍼즐 게임입니다. 기획, 레벨 디자인, 게임 메카닉 구현까지 전반적인 개발에 참여하며 팀 협업과 프로젝트 관리를 경험했습니다.",
-        type: "team",
-        techs: ["Unity", "C#"],
-        period: "2024.01 ~ 2024.04",
-        role: "게임 개발자",
-        teamSize: "팀",
+        title: "정산서 자동화",
+        desc: "Python을 활용한 회사 정산서 자동화 프로그램. 반복 업무를 효율적으로 처리.",
+        fullDesc: "Python으로 개발한 회사 정산서 자동화 프로그램입니다. 반복적인 정산 업무를 자동화하여 업무 효율을 향상시켰습니다. 데이터 처리, 엑셀 파일 자동 생성 등의 기능을 구현했습니다.",
+        type: "personal",
+        techs: ["Python", "Excel"],
+        period: "2025.05-2025.10",
+        role: "1인 개발",
+        teamSize: "1명 (개인)",
         highlights: [
-            "퍼즐 메카닉 설계 및 구현",
-            "레벨 디자인 참여",
-            "팀 협업 & 버전 관리",
-            "SBS게임아카데미 프로젝트"
+            "정산 업무 자동화",
+            "데이터 처리 & 파싱",
+            "엑셀 파일 자동 생성",
+            "업무 효율 향상"
         ]
     },
     {
         id: 2,
-        title: "Vampire Survivors (2D)",
-        desc: "뱀파이어 서바이버즈 스타일의 2D 서바이벌 게임을 Unity로 구현.",
-        fullDesc: "인기 게임 Vampire Survivors를 모티브로 한 2D 서바이벌 게임입니다. 웨이브 시스템, 적 AI, 무기 시스템, 레벨업 메카닉 등 핵심 게임플레이 루프를 직접 설계하고 구현했습니다.",
+        title: "Is_It_Legal",
+        desc: "Gemini API를 활용한 법률 판별 서비스. lawornot.com에서 서비스 중.",
+        fullDesc: "Google Gemini API를 활용하여 법률 관련 질문에 답변하는 웹 서비스입니다. 사용자의 행위가 합법인지 불법인지를 AI로 판별해주며, 실제로 lawornot.com에서 서비스되고 있습니다.",
         type: "personal",
-        techs: ["Unity", "C#"],
-        period: "2023.07 ~ 2023.08",
+        techs: ["Gemini API", "React"],
+        period: "2026.01-2026.02",
         role: "1인 개발",
         teamSize: "1명 (개인)",
+        link: "https://www.lawornot.com/",
         highlights: [
-            "웨이브 기반 적 스폰 시스템",
-            "다양한 무기 & 스킬 시스템",
-            "레벨업 및 성장 메카닉",
-            "오브젝트 풀링 최적화"
+            "Gemini API 연동",
+            "법률 판별 AI 서비스",
+            "실제 서비스 배포 (lawornot.com)",
+            "사용자 친화적 UI/UX"
         ]
     },
     {
         id: 3,
-        title: "3D Action Game",
-        desc: "3인칭 3D 액션 게임. 캐릭터 컨트롤러, 전투 시스템, 적 AI를 구현.",
-        fullDesc: "Unity 기반의 3인칭 3D 액션 게임으로, 캐릭터 이동 및 전투 시스템, 적 AI, 애니메이션 상태 머신 등을 직접 구현했습니다. 물리 엔진과 연동한 타격감 있는 전투를 목표로 개발했습니다.",
+        title: "TopDown-Shooting",
+        desc: "탑다운 시점의 슈팅 게임. 조작감과 타격감에 집중한 프로젝트.",
+        fullDesc: "탑다운 시점에서 플레이하는 슈팅 게임입니다. 난수 생성, 다양한 무기 시스템, 적 AI 등을 구현하며 쾌적한 조작감과 타격감에 집중했습니다.",
         type: "personal",
         techs: ["Unity", "C#"],
-        period: "2024.04 ~ 2024.06",
-        role: "1인 개발",
-        teamSize: "1명 (개인)",
-        highlights: [
-            "3인칭 캐릭터 컨트롤러",
-            "콤보 기반 전투 시스템",
-            "적 AI (FSM 패턴)",
-            "애니메이션 상태 머신"
-        ]
-    },
-    {
-        id: 4,
-        title: "Christmas Carol (2D)",
-        desc: "크리스마스 테마의 2D 게임. 학교와 집에서 약 2개월간 개발.",
-        fullDesc: "크리스마스를 테마로 한 2D 게임 프로젝트입니다. 스토리 기반의 게임 진행과 다양한 스테이지를 직접 기획하고 구현했습니다.",
-        type: "personal",
-        techs: ["Unity", "C#"],
-        period: "2023.09 ~ 2023.11",
-        role: "1인 개발",
-        teamSize: "1명 (개인)",
-        highlights: [
-            "스토리 기반 게임 진행",
-            "다양한 스테이지 설계",
-            "UI/UX 시스템 구현",
-            "사운드 & 이펙트 연출"
-        ]
-    },
-    {
-        id: 5,
-        title: "Tower Defense (2D)",
-        desc: "타워 디펜스 장르의 2D 전략 게임. 타워 배치, 적 경로, 웨이브 시스템 구현.",
-        fullDesc: "클래식 타워 디펜스 장르의 2D 전략 게임입니다. 다양한 종류의 타워 배치 시스템, 적 경로 탐색(Pathfinding), 웨이브 기반 스폰 시스템을 구현했습니다.",
-        type: "personal",
-        techs: ["Unity", "C#"],
-        period: "2023.12",
-        role: "1인 개발",
-        teamSize: "1명 (개인)",
-        highlights: [
-            "타워 배치 & 업그레이드 시스템",
-            "적 경로 탐색 알고리즘",
-            "웨이브 스폰 시스템",
-            "전략적 밸런싱"
-        ]
-    },
-    {
-        id: 6,
-        title: "TopDown Shooting (3D)",
-        desc: "탑다운 시점의 3D 슈팅 게임. 조작감과 타격감에 집중한 프로젝트.",
-        fullDesc: "탑다운 시점에서 플레이하는 3D 슈팅 게임입니다. 마우스 에이밍, 다양한 무기 시스템, 적 AI 등을 구현하며 쾌적한 조작감과 타격감에 집중했습니다.",
-        type: "personal",
-        techs: ["Unity", "C#"],
-        period: "2024.09",
+        period: "2024.09-2024.10",
         role: "1인 개발",
         teamSize: "1명 (개인)",
         highlights: [
@@ -110,54 +60,105 @@ const projects = [
         ]
     },
     {
-        id: 7,
-        title: "지방기능경기대회 게임개발",
-        desc: "2024 지방기능경기대회 게임개발 종목 참가. MeisterNet 주관.",
-        fullDesc: "2024년 지방기능경기대회 게임개발 종목에 참가하여 제한된 시간 내에 주어진 과제를 Unity로 구현했습니다. 실전 압박 속에서 빠른 개발 능력과 문제 해결 역량을 발휘했습니다.",
-        type: "competition",
-        techs: ["Unity", "C#"],
-        period: "2024.04.01 ~ 04.04",
-        role: "참가자",
-        teamSize: "개인",
-        highlights: [
-            "제한 시간 내 게임 구현",
-            "과제 분석 & 빠른 설계",
-            "실전 압박 속 개발",
-            "MeisterNet 주관 대회"
-        ]
-    },
-    {
-        id: 8,
-        title: "경기도x퓨처랩 청소년 게임잼",
-        desc: "Smilegate 오피스에서 진행된 게임잼. 제한 시간 내 게임 개발 도전.",
-        fullDesc: "경기도와 퓨처랩이 주관하고 Smilegate 오피스에서 진행된 청소년 게임잼에 참가했습니다. 짧은 시간 안에 기획부터 완성까지 팀워크를 발휘하며 게임을 개발했습니다.",
-        type: "competition",
-        techs: ["Unity", "C#"],
-        period: "2024.10.31 ~ 11.01",
-        role: "참가자",
-        teamSize: "팀",
-        highlights: [
-            "Smilegate 오피스 현장",
-            "24시간 내 게임 완성",
-            "기획 → 개발 → 발표",
-            "팀워크 & 빠른 프로토타이핑"
-        ]
-    },
-    {
-        id: 9,
-        title: "Tetris (2D) - Remake",
-        desc: "테트리스를 Unity로 리메이크. 2023년 첫 버전에 이어 2025년 개선 버전 개발.",
-        fullDesc: "클래식 테트리스를 Unity로 구현한 프로젝트입니다. 2023년 SBS게임아카데미에서 첫 버전을 만들고, 2025년에 개선된 버전을 새로 개발하며 성장을 확인했습니다.",
+        id: 4,
+        title: "Tetris",
+        desc: "테트리스를 Unity로 구현한 개인 프로젝트 작품.",
+        fullDesc: "클래식 테트리스를 Unity로 구현한 개인 프로젝트입니다. 테트로미노 회전, 라인 클리어, 점수 시스템 등 핵심 메카닉을 직접 설계하고 구현했습니다.",
         type: "personal",
         techs: ["Unity", "C#"],
-        period: "2025.01",
+        period: "2025.01-2025.04",
         role: "1인 개발",
         teamSize: "1명 (개인)",
         highlights: [
             "테트로미노 회전 & 이동 시스템",
             "라인 클리어 & 점수 시스템",
             "고스트 피스 & 홀드 기능",
-            "2023년 대비 코드 품질 향상"
+            "클래식 게임 재현"
+        ]
+    },
+    {
+        id: 5,
+        title: "Phencyclidine",
+        desc: "경기도 x 퓨처랩 게임잼 출품작. Smilegate 오피스에서 진행.",
+        fullDesc: "경기도와 퓨처랩이 주관하고 Smilegate 오피스에서 진행된 청소년 게임잼에 참가하여 제작한 작품입니다. 짧은 시간 안에 기획부터 완성까지 팀워크를 발휘하며 게임을 개발했습니다.",
+        type: "competition",
+        techs: ["Unity", "C#"],
+        period: "2024.10.31",
+        role: "참가자",
+        teamSize: "팀",
+        highlights: [
+            "Smilegate 오피스 현장",
+            "경기도 x 퓨처랩 게임잼",
+            "기획 → 개발 → 발표",
+            "팀워크 & 빠른 프로토타이핑"
+        ]
+    },
+    {
+        id: 6,
+        title: "Bouncy_BALL",
+        desc: "통통 튀는 공을 활용한 게임. 물리 엔진 기반 역동적인 플레이.",
+        fullDesc: "물리 엔진을 활용한 공 튀기기 게임입니다. 리얼한 물리 시뮬레이션과 재미있는 게임플레이를 결합하여, 직관적인 조작과 물리 기반 인터랙션을 구현했습니다.",
+        type: "personal",
+        techs: ["Unity", "C#"],
+        period: "2024.01-2024.04",
+        role: "1인 개발",
+        teamSize: "1명 (개인)",
+        highlights: [
+            "물리 엔진 기반 게임플레이",
+            "공 물리 시뮬레이션",
+            "직관적 조작 시스템",
+            "스테이지 설계"
+        ]
+    },
+    {
+        id: 7,
+        title: "Tower_Defanse",
+        desc: "타워 디펜스 장르의 전략 게임. 타워 배치, 적 경로, 웨이브 시스템 구현.",
+        fullDesc: "클래식 타워 디펜스 장르의 전략 게임입니다. 다양한 종류의 타워 배치 시스템, 적 경로 탐색(Pathfinding), 웨이브 기반 스폰 시스템을 구현했습니다.",
+        type: "personal",
+        techs: ["Unity", "C#"],
+        period: "2024.12-2025.01",
+        role: "1인 개발",
+        teamSize: "1명 (개인)",
+        highlights: [
+            "타워 배치 & 업그레이드 시스템",
+            "적 경로 탐색 알고리즘",
+            "웨이브 스폰 시스템",
+            "전략적 밸런싱"
+        ]
+    },
+    {
+        id: 8,
+        title: "wmz_puzzle",
+        desc: "SBS게임아카데미에서 팀으로 진행한 퍼즐 게임. 기획부터 개발까지 협업.",
+        fullDesc: "SBS게임아카데미에서 팀 프로젝트로 진행한 퍼즐 게임입니다. 기획, 레벨 디자인, 게임 메카닉 구현까지 전반적인 개발에 참여하며 팀 협업과 프로젝트 관리를 경험했습니다.",
+        type: "team",
+        techs: ["Unity", "C#"],
+        period: "2024.01-2025.04",
+        role: "게임 개발자",
+        teamSize: "팀",
+        highlights: [
+            "퍼즐 메카닉 설계 및 구현",
+            "레벨 디자인 참여",
+            "팀 협업 & 버전 관리",
+            "SBS게임아카데미 프로젝트"
+        ]
+    },
+    {
+        id: 9,
+        title: "3D Action Game",
+        desc: "3인칭 3D 액션 게임. 캐릭터 컨트롤러, 전투 시스템, 적 AI를 구현.",
+        fullDesc: "Unity 기반의 3인칭 3D 액션 게임으로, 캐릭터 이동 및 전투 시스템, 적 AI, 애니메이션 상태 머신 등을 직접 구현했습니다. 물리 엔진과 연동한 타격감 있는 전투를 목표로 개발했습니다.",
+        type: "personal",
+        techs: ["Unity", "C#"],
+        period: "2024.04-2024.06",
+        role: "1인 개발",
+        teamSize: "1명 (개인)",
+        highlights: [
+            "3인칭 캐릭터 컨트롤러",
+            "콤보 기반 전투 시스템",
+            "적 AI (FSM 패턴)",
+            "애니메이션 상태 머신"
         ]
     }
 ];
@@ -395,34 +396,8 @@ const revealObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 // =====================
-// 8. Count-Up Animation
+// 8. (Reserved)
 // =====================
-const countObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const el = entry.target;
-            const target = parseInt(el.dataset.target);
-            animateCount(el, target);
-            countObserver.unobserve(el);
-        }
-    });
-}, { threshold: 0.5 });
-
-document.querySelectorAll('.hero-stat-num').forEach(el => countObserver.observe(el));
-
-function animateCount(el, target) {
-    const duration = 1500;
-    const start = performance.now();
-
-    function update(now) {
-        const elapsed = now - start;
-        const progress = Math.min(elapsed / duration, 1);
-        const eased = 1 - Math.pow(1 - progress, 3);
-        el.textContent = Math.floor(eased * target);
-        if (progress < 1) requestAnimationFrame(update);
-    }
-    requestAnimationFrame(update);
-}
 
 // =====================
 // 9. Skill Bar Animation
@@ -614,6 +589,16 @@ function openModal(project) {
         <h4>주요 내용</h4>
         <ul>${project.highlights.map(h => `<li>${h}</li>`).join('')}</ul>
     `;
+
+    // 링크가 있는 프로젝트 처리
+    const linkWrap = document.getElementById('modalLinkWrap');
+    const linkEl = document.getElementById('modalLink');
+    if (project.link) {
+        linkWrap.style.display = 'block';
+        linkEl.href = project.link;
+    } else {
+        linkWrap.style.display = 'none';
+    }
 
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
