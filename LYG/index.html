@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LYG | 이윤건 - Developer Portfolio</title>
+    <meta name="description" content="이윤건(LYG) - Unity, WPF, Python, Java, C# 개발자 포트폴리오">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Star Field Canvas Background -->
+    <canvas id="starfield"></canvas>
+
+    <!-- Cursor Glow -->
+    <div class="cursor-glow" id="cursorGlow"></div>
+
+    <!-- Scroll Progress Bar -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-brand">
+            <span class="nav-logo">LYG</span>
+            <span class="nav-dot"></span>
+        </div>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#hero" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#skills" class="nav-link">Skills</a></li>
+            <li><a href="#projects" class="nav-link">Projects</a></li>
+            <li><a href="#timeline" class="nav-link">Timeline</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">DEVELOPER PORTFOLIO</div>
+            <h1 class="hero-name">
+                <span class="glitch" data-text="이윤건">이윤건</span>
+            </h1>
+            <p class="hero-alias">&lt; LYG /&gt;</p>
+            <div class="hero-typing">
+                <span class="typing-text" id="typingText"></span>
+                <span class="typing-cursor">|</span>
+            </div>
+            <p class="hero-motto">"If you don't live as you think, you think as you live."</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">
+                    <span>Projects</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M17 7H7M17 7V17"/></svg>
+                </a>
+                <a href="#contact" class="btn btn-outline">
+                    <span>Contact</span>
+                </a>
+            </div>
+            <div class="hero-stats">
+                <div class="hero-stat">
+                    <span class="hero-stat-num" data-target="4">0</span>
+                    <span class="hero-stat-label">년차 개발</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num" data-target="2">0</span>
+                    <span class="hero-stat-label">년차 현직</span>
+                </div>
+                <div class="hero-stat-divider"></div>
+                <div class="hero-stat">
+                    <span class="hero-stat-num" data-target="4">0</span>
+                    <span class="hero-stat-label">회 대회</span>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-hint" id="scrollHint">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section class="section about" id="about">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">01</span>
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">개발자 이윤건을 소개합니다</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card reveal">
+                    <div class="about-avatar">
+                        <div class="avatar-ring"></div>
+                        <div class="avatar-text">LYG</div>
+                    </div>
+                    <h3 class="about-name">이윤건 <span class="about-eng">(Lee Yun Geon)</span></h3>
+                    <p class="about-role">Software Developer</p>
+                    <p class="about-goal">
+                        <span class="goal-text">while(alive) { enjoy(); }</span>
+                    </p>
+                </div>
+                <div class="about-details">
+                    <div class="detail-card reveal" style="--delay: 0.1s">
+                        <div class="detail-icon">💼</div>
+                        <div class="detail-content">
+                            <h4>경력</h4>
+                            <p>개발 4년차 · TOBESMART 현직 2년차</p>
+                        </div>
+                    </div>
+                    <div class="detail-card reveal" style="--delay: 0.2s">
+                        <div class="detail-icon">🎓</div>
+                        <div class="detail-content">
+                            <h4>학력</h4>
+                            <p>성일정보고등학교 졸업</p>
+                            <p>동양미래대학교 재학 (2026~)</p>
+                            <p>한국공학대학교 편입 예정 (2028~)</p>
+                        </div>
+                    </div>
+                    <div class="detail-card reveal" style="--delay: 0.3s">
+                        <div class="detail-icon">🏆</div>
+                        <div class="detail-content">
+                            <h4>프로젝트</h4>
+                            <p>게임 개발 16+작품 · 팀 프로젝트 · 대회 4회</p>
+                        </div>
+                    </div>
+                    <div class="detail-card reveal" style="--delay: 0.4s">
+                        <div class="detail-icon">🎬</div>
+                        <div class="detail-content">
+                            <h4>취미</h4>
+                            <p>영화 관람 · 게임</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SKILLS SECTION ==================== -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">02</span>
+                <h2 class="section-title">Skills</h2>
+                <p class="section-subtitle">기술 스택 & 역량</p>
+            </div>
+            <div class="skills-orbit-wrap reveal">
+                <canvas id="skillOrbit"></canvas>
+                <div class="orbit-center">
+                    <span class="orbit-label">TECH</span>
+                    <span class="orbit-sub">STACK</span>
+                </div>
+            </div>
+            <div class="skills-grid">
+                <div class="skill-card reveal" style="--delay: 0.05s" data-skill="unity">
+                    <div class="skill-icon-wrap">
+                        <div class="skill-icon">🎮</div>
+                    </div>
+                    <h4>Unity</h4>
+                    <p>게임 & 인터랙티브 앱 개발</p>
+                    <div class="skill-bar"><div class="skill-fill" data-level="100"></div></div>
+                </div>
+                <div class="skill-card reveal" style="--delay: 0.1s" data-skill="wpf">
+                    <div class="skill-icon-wrap">
+                        <div class="skill-icon">🖥️</div>
+                    </div>
+                    <h4>WPF</h4>
+                    <p>데스크톱 UI 애플리케이션</p>
+                    <div class="skill-bar"><div class="skill-fill" data-level="84"></div></div>
+                </div>
+                <div class="skill-card reveal" style="--delay: 0.15s" data-skill="unreal">
+                    <div class="skill-icon-wrap">
+                        <div class="skill-icon">🕹️</div>
+                    </div>
+                    <h4>Unreal</h4>
+                    <p>언리얼 엔진 게임 개발</p>
+                    <div class="skill-bar"><div class="skill-fill" data-level="63"></div></div>
+                </div>
+                <div class="skill-card reveal" style="--delay: 0.2s" data-skill="sql">
+                    <div class="skill-icon-wrap">
+                        <div class="skill-icon">🗄️</div>
+                    </div>
+                    <h4>SQL</h4>
+                    <p>데이터베이스 설계 & 관리</p>
+                    <div class="skill-bar"><div class="skill-fill" data-level="72"></div></div>
+                </div>
+                <div class="skill-card reveal" style="--delay: 0.25s" data-skill="csharp">
+                    <div class="skill-icon-wrap">
+                        <div class="skill-icon">⚙️</div>
+                    </div>
+                    <h4>C#</h4>
+                    <p>.NET 기반 애플리케이션</p>
+                    <div class="skill-bar"><div class="skill-fill" data-level="91"></div></div>
+                </div>
+                <div class="skill-card reveal" style="--delay: 0.3s" data-skill="python">
+                    <div class="skill-icon-wrap">
+                        <div class="skill-icon">🐍</div>
+                    </div>
+                    <h4>Python</h4>
+                    <p>자동화 & 데이터 처리</p>
+                    <div class="skill-bar"><div class="skill-fill" data-level="76"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PROJECTS SECTION ==================== -->
+    <section class="section projects" id="projects">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">03</span>
+                <h2 class="section-title">Projects</h2>
+                <p class="section-subtitle">프로젝트 포트폴리오</p>
+            </div>
+            <div class="project-filters reveal">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="team">Team</button>
+                <button class="filter-btn" data-filter="personal">Personal</button>
+                <button class="filter-btn" data-filter="competition">Competition</button>
+            </div>
+            <div class="project-grid" id="projectGrid">
+                <!-- 프로젝트 카드는 JS에서 동적 생성 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Modal -->
+    <div class="modal-overlay" id="modalOverlay">
+        <div class="modal" id="projectModal">
+            <button class="modal-close" id="modalClose" aria-label="닫기">&times;</button>
+            <div class="modal-header">
+                <span class="modal-tag" id="modalTag"></span>
+                <h3 class="modal-title" id="modalTitle"></h3>
+            </div>
+            <div class="modal-body">
+                <p class="modal-desc" id="modalDesc"></p>
+                <div class="modal-meta">
+                    <div class="modal-meta-item">
+                        <span class="meta-label">기간</span>
+                        <span class="meta-value" id="modalPeriod"></span>
+                    </div>
+                    <div class="modal-meta-item">
+                        <span class="meta-label">역할</span>
+                        <span class="meta-value" id="modalRole"></span>
+                    </div>
+                    <div class="modal-meta-item">
+                        <span class="meta-label">팀 규모</span>
+                        <span class="meta-value" id="modalTeamSize"></span>
+                    </div>
+                </div>
+                <div class="modal-techs" id="modalTechs"></div>
+                <div class="modal-details" id="modalDetails"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== TIMELINE SECTION ==================== -->
+    <section class="section timeline-section" id="timeline">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">04</span>
+                <h2 class="section-title">Timeline</h2>
+                <p class="section-subtitle">성장 과정</p>
+            </div>
+            <div class="timeline">
+                <div class="timeline-line"></div>
+                <div class="timeline-item reveal" style="--delay: 0.1s">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">2022.11.10</span>
+                        <h4>SBS게임아카데미 Unity 과정</h4>
+                        <p>Unity를 통해 프로그래밍 세계에 첫 발을 내딛다</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal" style="--delay: 0.15s">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">2023.03.02</span>
+                        <h4>성일정보고등학교 입학</h4>
+                        <p>소프트웨어과 · Java/웹/SQL 방과후 · 게임 개발 스터디 & 동아리</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal" style="--delay: 0.2s">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">2024.01.10</span>
+                        <h4>SBS게임아카데미 Unreal 과정</h4>
+                        <p>Unreal Engine 학습 & 팀 프로젝트(wmg_puzzle) 진행</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal" style="--delay: 0.25s">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">2024.04</span>
+                        <h4>지방기능경기대회 게임개발 참가</h4>
+                        <p>MeisterNet · 대회를 통한 실전 경험</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal" style="--delay: 0.3s">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">2024.10.31</span>
+                        <h4>경기도x퓨처랩 청소년 게임잼</h4>
+                        <p>Smilegate 오피스 · 제한 시간 내 게임 개발 도전</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal" style="--delay: 0.35s">
+                    <div class="timeline-dot active"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">2025.03.04</span>
+                        <h4>TOBESMART 입사</h4>
+                        <p>현직 개발자로서 실무 경험 시작</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal" style="--delay: 0.4s">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">2026.03.07</span>
+                        <h4>동양미래대학교 입학</h4>
+                        <p>컴퓨터공학 전공으로 더 깊은 학문 탐구</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal" style="--delay: 0.45s">
+                    <div class="timeline-dot future"></div>
+                    <div class="timeline-card">
+                        <span class="timeline-date">2028 (예정)</span>
+                        <h4>한국공학대학교 편입</h4>
+                        <p>더 높은 곳을 향한 도전</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CONTACT SECTION ==================== -->
+    <section class="section contact" id="contact">
+        <div class="container">
+            <div class="section-header reveal">
+                <span class="section-tag">05</span>
+                <h2 class="section-title">Contact</h2>
+                <p class="section-subtitle">함께 일해요</p>
+            </div>
+            <div class="contact-grid">
+                <a href="tel:010-5204-4643" class="contact-card reveal" style="--delay: 0.1s">
+                    <div class="contact-icon">📱</div>
+                    <h4>Phone</h4>
+                    <p>010-5204-4643</p>
+                </a>
+                <a href="mailto:dbsrjs1224@gmail.com" class="contact-card reveal" style="--delay: 0.2s">
+                    <div class="contact-icon">📧</div>
+                    <h4>Email</h4>
+                    <p>dbsrjs1224@gmail.com</p>
+                </a>
+                <a href="https://github.com/dbsrjs" target="_blank" rel="noopener noreferrer" class="contact-card reveal" style="--delay: 0.3s">
+                    <div class="contact-icon">💻</div>
+                    <h4>GitHub</h4>
+                    <p>github.com/dbsrjs</p>
+                </a>
+            </div>
+            <div class="contact-motto reveal">
+                <p>"If you don't live as you think, you think as you live."</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; 2026 이윤건(LYG). All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
