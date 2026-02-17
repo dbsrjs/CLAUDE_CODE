@@ -668,7 +668,18 @@ document.querySelectorAll('.btn, .project-card, .contact-card').forEach(el => {
 });
 
 // =====================
-// 14. 3D Tilt Effect on Cards
+// 14. Detail Card Mouse Glow
+// =====================
+document.querySelectorAll('.detail-card').forEach(card => {
+    card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        card.style.setProperty('--mouse-x', ((e.clientX - rect.left) / rect.width * 100) + '%');
+        card.style.setProperty('--mouse-y', ((e.clientY - rect.top) / rect.height * 100) + '%');
+    });
+});
+
+// =====================
+// 15. 3D Tilt Effect on Cards
 // =====================
 document.querySelectorAll('.skill-card, .detail-card').forEach(card => {
     card.addEventListener('mousemove', (e) => {
@@ -686,7 +697,7 @@ document.querySelectorAll('.skill-card, .detail-card').forEach(card => {
 });
 
 // =====================
-// 15. Scroll Hint Hide
+// 16. Scroll Hint Hide
 // =====================
 const scrollHint = document.getElementById('scrollHint');
 window.addEventListener('scroll', () => {
@@ -699,7 +710,7 @@ window.addEventListener('scroll', () => {
 });
 
 // =====================
-// 16. Smooth Scroll
+// 17. Smooth Scroll
 // =====================
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', (e) => {
