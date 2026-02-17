@@ -427,9 +427,10 @@ const orbitCtx = orbitCanvas.getContext('2d');
 
 const skillNodes = [
     { name: 'Unity', color: '#00e5a0', orbit: 1, angle: 0, speed: 0.008, size: 22 },
-    { name: 'C#', color: '#7c5cff', orbit: 1, angle: Math.PI * 0.5, speed: 0.008, size: 22 },
-    { name: 'Unreal', color: '#00d4ff', orbit: 1, angle: Math.PI, speed: 0.008, size: 20 },
-    { name: 'C++', color: '#ff6b9d', orbit: 1, angle: Math.PI * 1.5, speed: 0.008, size: 20 },
+    { name: 'C#', color: '#7c5cff', orbit: 1, angle: Math.PI * 0.4, speed: 0.008, size: 22 },
+    { name: 'WPF', color: '#68217a', orbit: 1, angle: Math.PI * 0.8, speed: 0.008, size: 20 },
+    { name: 'Unreal', color: '#00d4ff', orbit: 1, angle: Math.PI * 1.2, speed: 0.008, size: 20 },
+    { name: 'C++', color: '#ff6b9d', orbit: 1, angle: Math.PI * 1.6, speed: 0.008, size: 20 },
     { name: 'Python', color: '#ffd60a', orbit: 2, angle: 0, speed: 0.005, size: 18 },
     { name: 'Java', color: '#ff9a5c', orbit: 2, angle: Math.PI * 0.5, speed: 0.005, size: 18 },
     { name: 'SQL', color: '#a78bfa', orbit: 2, angle: Math.PI, speed: 0.005, size: 16 },
