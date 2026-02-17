@@ -396,8 +396,41 @@ const revealObserver = new IntersectionObserver((entries) => {
 document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 
 // =====================
-// 8. (Reserved)
+// 8. Developer's Life Counter (2022.11.10~)
 // =====================
+const DEV_START = new Date(2022, 10, 10); // 2022년 11월 10일 (month는 0-indexed)
+const GOAL_DAYS = 10000;
+
+function updateDevLifeCounter() {
+    const now = new Date();
+    const diff = now - DEV_START;
+
+    const totalDays = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+    const daysEl = document.getElementById('counterDays');
+    const hoursEl = document.getElementById('counterHours');
+    const minutesEl = document.getElementById('counterMinutes');
+    const secondsEl = document.getElementById('counterSeconds');
+    const barFill = document.getElementById('devLifeBarFill');
+    const percentEl = document.getElementById('devLifePercent');
+
+    if (daysEl) {
+        daysEl.textContent = totalDays.toLocaleString();
+        hoursEl.textContent = String(hours).padStart(2, '0');
+        minutesEl.textContent = String(minutes).padStart(2, '0');
+        secondsEl.textContent = String(seconds).padStart(2, '0');
+
+        const percent = Math.min((totalDays / GOAL_DAYS) * 100, 100).toFixed(1);
+        barFill.style.width = percent + '%';
+        percentEl.textContent = percent;
+    }
+}
+
+updateDevLifeCounter();
+setInterval(updateDevLifeCounter, 1000);
 
 // =====================
 // 9. Skill Bar Animation

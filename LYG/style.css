@@ -650,6 +650,132 @@ a {
 }
 
 /* =====================
+   DEVELOPER'S LIFE COUNTER
+   ===================== */
+.dev-life-section {
+    padding: 60px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.dev-life-container {
+    text-align: center;
+    padding: 50px 60px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 24px;
+    backdrop-filter: blur(20px);
+    max-width: 700px;
+    width: 100%;
+}
+
+.dev-life-label {
+    font-family: var(--font-mono);
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 6px;
+    color: var(--primary);
+    margin-bottom: 4px;
+}
+
+.dev-life-since {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    margin-bottom: 30px;
+    letter-spacing: 2px;
+}
+
+.dev-life-counter {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+}
+
+.counter-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+}
+
+.counter-number {
+    font-family: var(--font-mono);
+    font-size: 3.2rem;
+    font-weight: 800;
+    color: var(--text);
+    line-height: 1;
+    background: linear-gradient(135deg, var(--text) 0%, var(--primary) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.counter-unit {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    color: var(--text-dim);
+    letter-spacing: 3px;
+    margin-top: 6px;
+}
+
+.counter-separator {
+    font-family: var(--font-mono);
+    font-size: 2.4rem;
+    color: var(--primary);
+    opacity: 0.4;
+    margin-bottom: 18px;
+}
+
+.dev-life-bar {
+    margin: 28px auto 12px;
+    width: 100%;
+    max-width: 400px;
+    height: 4px;
+    background: rgba(255, 255, 255, 0.06);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.dev-life-bar-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: 4px;
+    transition: width 1s ease;
+    width: 0%;
+    box-shadow: 0 0 12px rgba(0, 229, 160, 0.4);
+}
+
+.dev-life-milestone {
+    font-family: var(--font-mono);
+    font-size: 0.7rem;
+    color: var(--text-dim);
+    letter-spacing: 1px;
+}
+
+.dev-life-milestone span {
+    color: var(--primary);
+    font-weight: 700;
+}
+
+@media (max-width: 480px) {
+    .dev-life-container {
+        padding: 36px 24px;
+    }
+    .counter-number {
+        font-size: 2rem;
+    }
+    .counter-block {
+        min-width: 55px;
+    }
+    .counter-separator {
+        font-size: 1.6rem;
+    }
+}
+
+/* =====================
    SKILLS SECTION
    ===================== */
 .skills-orbit-wrap {
