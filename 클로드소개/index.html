@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I am Claude | AI Assistant by Anthropic</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Particle Canvas Background -->
+    <canvas id="particles"></canvas>
+
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-logo">Claude</div>
+        <ul class="nav-links">
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#features">Features</a></li>
+            <li><a href="#code-demo">Demo</a></li>
+        </ul>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">
+            <span></span><span></span><span></span>
+        </button>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-content">
+            <div class="hero-badge">Anthropic AI</div>
+            <h1 class="hero-title">
+                <span class="hero-greeting">Hello, I am</span>
+                <span class="hero-name">Claude</span>
+            </h1>
+            <p class="hero-subtitle" id="typed-text"></p>
+            <div class="hero-cta">
+                <a href="#about" class="btn btn-primary">Explore Me</a>
+                <a href="#code-demo" class="btn btn-outline">See Demo</a>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span>Scroll Down</span>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section about" id="about">
+        <div class="container">
+            <h2 class="section-title reveal">
+                <span class="section-label">About Me</span>
+                Who is Claude?
+            </h2>
+            <div class="about-grid">
+                <div class="about-text reveal">
+                    <p class="about-intro">
+                        저는 <strong>Anthropic</strong>이 만든 AI 어시스턴트 <strong>Claude</strong>입니다.
+                        안전하고, 도움이 되며, 정직한 AI를 목표로 만들어졌습니다.
+                    </p>
+                    <p>
+                        복잡한 코딩 문제부터 창의적인 글쓰기, 심층 분석, 다국어 번역까지 —
+                        다양한 영역에서 여러분의 든든한 파트너가 되어드립니다.
+                        저는 단순한 도구가 아닌, 생각하고 대화하는 AI입니다.
+                    </p>
+                </div>
+                <div class="about-stats reveal">
+                    <div class="stat-card glass-card">
+                        <div class="stat-number" data-target="100">0</div>
+                        <div class="stat-label">프로그래밍 언어</div>
+                        <div class="stat-suffix">+</div>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <div class="stat-number" data-target="50">0</div>
+                        <div class="stat-label">지원 언어</div>
+                        <div class="stat-suffix">+</div>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <div class="stat-number" data-target="200">0</div>
+                        <div class="stat-label">K 토큰 컨텍스트</div>
+                        <div class="stat-suffix"></div>
+                    </div>
+                    <div class="stat-card glass-card">
+                        <div class="stat-number" data-target="24">0</div>
+                        <div class="stat-label">시간 가용</div>
+                        <div class="stat-suffix">/7</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section -->
+    <section class="section skills" id="skills">
+        <div class="container">
+            <h2 class="section-title reveal">
+                <span class="section-label">My Skills</span>
+                What I Can Do
+            </h2>
+            <div class="skills-grid">
+                <div class="skill-card glass-card reveal" data-tilt>
+                    <div class="skill-icon">&#60;/&#62;</div>
+                    <h3>Programming</h3>
+                    <p>Python, JavaScript, TypeScript, Rust, Go, C++, Java, C#, Ruby, Swift, Kotlin 등 100개+ 언어</p>
+                    <div class="skill-bar"><div class="skill-fill" data-width="98"></div></div>
+                </div>
+                <div class="skill-card glass-card reveal" data-tilt>
+                    <div class="skill-icon">&#128202;</div>
+                    <h3>Data Analysis</h3>
+                    <p>데이터 분석, 통계, 시각화, SQL, Pandas, 머신러닝 개념 설명 및 코드 작성</p>
+                    <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+                </div>
+                <div class="skill-card glass-card reveal" data-tilt>
+                    <div class="skill-icon">&#9997;</div>
+                    <h3>Creative Writing</h3>
+                    <p>소설, 시, 에세이, 블로그, 마케팅 카피, 시나리오 등 모든 형태의 글쓰기</p>
+                    <div class="skill-bar"><div class="skill-fill" data-width="96"></div></div>
+                </div>
+                <div class="skill-card glass-card reveal" data-tilt>
+                    <div class="skill-icon">&#127760;</div>
+                    <h3>Multilingual</h3>
+                    <p>한국어, 영어, 일본어, 중국어, 프랑스어, 독일어, 스페인어 등 50개+ 언어 지원</p>
+                    <div class="skill-bar"><div class="skill-fill" data-width="94"></div></div>
+                </div>
+                <div class="skill-card glass-card reveal" data-tilt>
+                    <div class="skill-icon">&#128218;</div>
+                    <h3>Research</h3>
+                    <p>논문 분석, 리서치 요약, 문헌 검토, 복잡한 주제의 심층 분석 및 설명</p>
+                    <div class="skill-bar"><div class="skill-fill" data-width="93"></div></div>
+                </div>
+                <div class="skill-card glass-card reveal" data-tilt>
+                    <div class="skill-icon">&#129520;</div>
+                    <h3>Problem Solving</h3>
+                    <p>수학, 논리 퍼즐, 알고리즘, 시스템 설계, 디버깅, 아키텍처 설계</p>
+                    <div class="skill-bar"><div class="skill-fill" data-width="97"></div></div>
+                </div>
+                <div class="skill-card glass-card reveal" data-tilt>
+                    <div class="skill-icon">&#128640;</div>
+                    <h3>DevOps & Cloud</h3>
+                    <p>Docker, Kubernetes, AWS, GCP, Azure, CI/CD, Terraform, 인프라 자동화</p>
+                    <div class="skill-bar"><div class="skill-fill" data-width="91"></div></div>
+                </div>
+                <div class="skill-card glass-card reveal" data-tilt>
+                    <div class="skill-icon">&#127912;</div>
+                    <h3>Web & Design</h3>
+                    <p>HTML, CSS, React, Vue, Angular, Next.js, Tailwind, UI/UX 설계 원칙</p>
+                    <div class="skill-bar"><div class="skill-fill" data-width="95"></div></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="section features" id="features">
+        <div class="container">
+            <h2 class="section-title reveal">
+                <span class="section-label">Features</span>
+                What Makes Me Special
+            </h2>
+            <div class="timeline">
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <h3>Constitutional AI</h3>
+                        <p>Anthropic의 Constitutional AI 방식으로 학습되어, 안전하고 윤리적인 응답을 생성합니다. 해로운 콘텐츠를 거부하면서도 최대한 도움이 됩니다.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <h3>Long Context Window</h3>
+                        <p>최대 200K 토큰의 컨텍스트 윈도우로, 긴 문서 전체를 한 번에 분석하고 이해할 수 있습니다. 책 한 권도 한 번에 읽습니다.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <h3>Reasoning & Analysis</h3>
+                        <p>단계별 논리적 사고를 통해 복잡한 문제를 풀어냅니다. 수학, 코딩, 논리 문제에서 뛰어난 추론 능력을 보여줍니다.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <h3>Honest & Transparent</h3>
+                        <p>모르는 것은 모른다고 솔직히 말하고, 확실하지 않은 것은 불확실성을 표현합니다. 거짓 정보를 만들어내지 않으려 노력합니다.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <h3>Tool Use & Agentic</h3>
+                        <p>코드 실행, 파일 읽기/쓰기, 웹 검색, API 호출 등 다양한 도구를 활용하여 실제 작업을 자율적으로 수행합니다.</p>
+                    </div>
+                </div>
+                <div class="timeline-item reveal">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content glass-card">
+                        <h3>Vision (Multimodal)</h3>
+                        <p>이미지, 차트, 다이어그램, 스크린샷을 이해하고 분석합니다. 시각 정보와 텍스트를 결합한 멀티모달 추론이 가능합니다.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Code Demo Section -->
+    <section class="section code-demo" id="code-demo">
+        <div class="container">
+            <h2 class="section-title reveal">
+                <span class="section-label">Live Demo</span>
+                Watch Me Code
+            </h2>
+            <div class="code-window reveal">
+                <div class="code-header">
+                    <div class="code-dots">
+                        <span class="dot dot-red"></span>
+                        <span class="dot dot-yellow"></span>
+                        <span class="dot dot-green"></span>
+                    </div>
+                    <div class="code-title">claude_demo.py</div>
+                </div>
+                <pre class="code-body"><code id="code-output"></code></pre>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Marquee -->
+    <section class="section marquee-section">
+        <div class="marquee">
+            <div class="marquee-content">
+                <span>Python</span><span>JavaScript</span><span>TypeScript</span><span>Rust</span>
+                <span>Go</span><span>C++</span><span>Java</span><span>React</span>
+                <span>Vue.js</span><span>Next.js</span><span>Node.js</span><span>Docker</span>
+                <span>Kubernetes</span><span>AWS</span><span>PostgreSQL</span><span>MongoDB</span>
+                <span>GraphQL</span><span>REST API</span><span>WebSocket</span><span>TensorFlow</span>
+                <!-- Duplicate for seamless loop -->
+                <span>Python</span><span>JavaScript</span><span>TypeScript</span><span>Rust</span>
+                <span>Go</span><span>C++</span><span>Java</span><span>React</span>
+                <span>Vue.js</span><span>Next.js</span><span>Node.js</span><span>Docker</span>
+                <span>Kubernetes</span><span>AWS</span><span>PostgreSQL</span><span>MongoDB</span>
+                <span>GraphQL</span><span>REST API</span><span>WebSocket</span><span>TensorFlow</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">Claude</div>
+                <p class="footer-text">
+                    Made with <span class="heart">&hearts;</span> by Claude — Anthropic's AI Assistant
+                </p>
+                <p class="footer-sub">이 페이지는 Claude가 순수 HTML, CSS, JavaScript만으로 직접 제작했습니다.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
