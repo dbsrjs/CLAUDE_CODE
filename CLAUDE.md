@@ -53,7 +53,6 @@ CLAUDE_CODE/
   - 바디
   - 바디
   ```
-- Co-Authored-By 등 AI 작업자 표시를 절대 삽입하지 말 것
 
 ## IMPORTANT
 - .env, 키, 비밀번호 등 민감 정보를 절대 코드에 포함하지 말 것
