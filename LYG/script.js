@@ -721,3 +721,41 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         }
     });
 });
+
+// =====================
+// 18. Timeline Auto Active (오늘 날짜 기준 자동 판별)
+// =====================
+(() => {
+    const today = new Date();
+    const items = document.querySelectorAll('.timeline-item');
+    let lastPastIdx = -1;
+
+    items.forEach((item, idx) => {
+        const dateText = item.querySelector('.timeline-date').textContent.trim();
+        // "2024.04", "2024.10.31", "2028 (예정)" 등 다양한 포맷 처리
+        const cleaned = dateText.replace(/[()예정\s]/g, '');
+        const parts = cleaned.split('.');
+        const year = parseInt(parts[0]);
+        const month = parts[1] ? parseInt(parts[1]) : 1;
+        const day = parts[2] ? parseInt(parts[2]) : 1;
+
+        if (!isNaN(year)) {
+            const eventDate = new Date(year, month - 1, day);
+            if (eventDate <= today) {
+                lastPastIdx = idx;
+            }
+        }
+    });
+
+    // 가장 최근 지난 이벤트에 active, 미래 이벤트에 future 부여
+    items.forEach((item, idx) => {
+        const dot = item.querySelector('.timeline-dot');
+        dot.classList.remove('active', 'future');
+
+        if (idx === lastPastIdx) {
+            dot.classList.add('active');
+        } else if (idx > lastPastIdx && lastPastIdx !== -1) {
+            dot.classList.add('future');
+        }
+    });
+})();
