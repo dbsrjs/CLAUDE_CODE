@@ -10,7 +10,7 @@
 |---|------|------|-----------|
 | 1 | `CLAUDE` | Claude 자기소개 페이지 | HTML, CSS, JS (Canvas, Glassmorphism) |
 | 2 | `2026year developer's` | 2026 개발자 현황 리포트 | HTML, CSS, JS (Matrix Rain, Chart) |
-| 3 | `LYG` | 이윤건(LYG) 개발자 자기소개 포트폴리오 | HTML, CSS, JS (Star Field, Skill Orbit, Modal) |
+| 3 | `LYG` | 이윤건(LYG) 개발자 자기소개 포트폴리오 | HTML, CSS, JS (Star Field, Skill Orbit, GitHub Heatmap, Flip Card) |
 
 ---
 
@@ -65,8 +65,10 @@ Anthropic의 AI 코딩 에이전트. 터미널에서 자연어로 지시하면
 | 1 | `"C:\Users\dbsrj\Desktop\CLAUDE_CODE\LYG" 이곳에 나를 소개하는 페이지를 만들어줘` + 개인정보 제공 | 6개 섹션 포트폴리오 완성 (Star Field, Glitch, Skill Orbit, 프로젝트 모달, 타임라인) |
 | 2 | 프로젝트 9개 목록 + 기간/기술 스택 직접 제공, 섹션 타이틀 피드백 | 대표 프로젝트(Featured Projects) 9개 교체, 프로필 이미지 추가, 히어로 태그 정리, Is_It_Legal 링크 연동 |
 | 3 | Developer's Life 카운터 요청 + Skill Orbit에 WPF 추가 | 2022.11.10부터 실시간 카운터(일/시/분/초), 10,000일 목표 진행률 바, WPF 스킬 노드 추가 |
+| 4 | 코드 리뷰 8.5+ 점수 달성 요청 + GitHub 히트맵, 방문자 통계, 인터랙션 개선 | scroll 통합(rAF 쓰로틀), innerHTML→안전 DOM, Page Visibility API, Star Field O(n) 최적화, 프로젝트 카드 3D 플립, 스킬 카드 호버 상세, GitHub 기여도 히트맵, 방문자 통계 위젯, 다방향 reveal 애니메이션, 타이핑 커서 그라데이션 |
+| 5 | 방문자 통계 섹션 카운터 버그 수정 + Contact nav 활성화 안 되는 문제 수정 | 섹션 카운터 0/8→0/9 초기값 수정, 뷰포트 기반 섹션 감지로 전환, 페이지 하단 도달 시 마지막 nav 링크 강제 활성화 |
 
-> **인사이트**: 구체적인 개인 정보(경력, 학력, 기술스택 등)를 제공하면 맞춤형 포트폴리오를 생성한다.<br>프로젝트 데이터를 JS 배열로 분리하면 나중에 쉽게 추가/수정 가능한 구조가 된다.<br>"Projects"→"Featured Projects"처럼 섹션 네이밍 하나로 전체 인상이 바뀐다.<br>개발 시작일 같은 감성적 데이터를 실시간 카운터로 표현하면 포트폴리오에 생동감을 준다.
+> **인사이트**: 구체적인 개인 정보(경력, 학력, 기술스택 등)를 제공하면 맞춤형 포트폴리오를 생성한다.<br>프로젝트 데이터를 JS 배열로 분리하면 나중에 쉽게 추가/수정 가능한 구조가 된다.<br>"Projects"→"Featured Projects"처럼 섹션 네이밍 하나로 전체 인상이 바뀐다.<br>개발 시작일 같은 감성적 데이터를 실시간 카운터로 표현하면 포트폴리오에 생동감을 준다.<br>Team Agents를 활용한 병렬 코드 리뷰 후 체계적으로 개선하면 코드 품질을 단계적으로 올릴 수 있다.<br>페이지 마지막 섹션은 scrollY 기반 감지로는 활성화가 안 될 수 있다 — 하단 도달 판정을 별도로 추가해야 한다.
 
 ---
 

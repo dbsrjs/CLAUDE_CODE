@@ -5,9 +5,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LYG | 이윤건 - Developer Portfolio</title>
     <meta name="description" content="이윤건(LYG) - Unity, WPF, Python, Java, C# 개발자 포트폴리오">
+    <meta property="og:title" content="LYG | 이윤건 - Developer Portfolio">
+    <meta property="og:description" content="Unity, WPF, Python, Java, C# 개발자 이윤건의 포트폴리오">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="LYG | 이윤건 - Developer Portfolio">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <!-- Preloader — 커튼 오픈 애니메이션 -->
+    <div id="preloader" class="preloader">
+        <div class="preloader-half preloader-top"></div>
+        <div class="preloader-half preloader-bottom"></div>
+        <div class="preloader-text" id="preloaderText"></div>
+    </div>
+
     <!-- Star Field Canvas Background -->
     <canvas id="starfield"></canvas>
 
@@ -29,6 +41,7 @@
             <li><a href="#skills" class="nav-link">Skills</a></li>
             <li><a href="#projects" class="nav-link">Projects</a></li>
             <li><a href="#timeline" class="nav-link">Timeline</a></li>
+            <li><a href="#github" class="nav-link">GitHub</a></li>
             <li><a href="#contact" class="nav-link">Contact</a></li>
         </ul>
         <button class="nav-toggle" id="navToggle" aria-label="메뉴 열기">
@@ -36,8 +49,15 @@
         </button>
     </nav>
 
+    <main>
     <!-- ==================== HERO SECTION ==================== -->
     <section class="hero" id="hero">
+        <!-- Mesh Gradient Background Orbs -->
+        <div class="hero-mesh">
+            <div class="mesh-orb mesh-orb-1"></div>
+            <div class="mesh-orb mesh-orb-2"></div>
+            <div class="mesh-orb mesh-orb-3"></div>
+        </div>
         <div class="hero-content">
             <div class="hero-badge">DEVELOPER PORTFOLIO</div>
             <h1 class="hero-name">
@@ -75,9 +95,9 @@
     <!-- ==================== ABOUT SECTION ==================== -->
     <section class="section about" id="about">
         <div class="container">
-            <div class="section-header reveal">
-                <h2 class="section-title">About Me</h2>
-                <p class="section-subtitle">개발자 이윤건을 소개합니다</p>
+            <div class="section-header reveal-clip reveal">
+                <h2 class="section-title reveal-inner">About Me</h2>
+                <p class="section-subtitle reveal-inner" style="--delay: 0.1s">개발자 이윤건을 소개합니다</p>
             </div>
             <div class="about-grid">
                 <div class="about-card reveal">
@@ -169,9 +189,9 @@
     <!-- ==================== SKILLS SECTION ==================== -->
     <section class="section skills" id="skills">
         <div class="container">
-            <div class="section-header reveal">
-                <h2 class="section-title">Skills</h2>
-                <p class="section-subtitle">기술 스택 & 역량</p>
+            <div class="section-header reveal-clip reveal">
+                <h2 class="section-title reveal-inner">Skills</h2>
+                <p class="section-subtitle reveal-inner" style="--delay: 0.1s">기술 스택 & 역량</p>
             </div>
             <div class="skills-orbit-wrap reveal">
                 <canvas id="skillOrbit"></canvas>
@@ -181,53 +201,89 @@
                 </div>
             </div>
             <div class="skills-grid">
-                <div class="skill-card reveal" style="--delay: 0.05s" data-skill="unity">
+                <div class="skill-card reveal" style="--delay: 0.05s" data-skill="unity" data-exp="4년" data-projects="8" data-detail="게임 로직, 물리 엔진, UI 시스템, 에디터 툴">
                     <div class="skill-icon-wrap">
                         <div class="skill-icon">🎮</div>
                     </div>
                     <h4>Unity</h4>
                     <p>게임 & 인터랙티브 앱 개발</p>
                     <div class="skill-bar"><div class="skill-fill" data-level="100"></div></div>
+                    <div class="skill-detail">
+                        <span class="skill-detail-level">Lv. Master</span>
+                        <span class="skill-detail-exp">경력 4년</span>
+                        <span class="skill-detail-projects">관련 프로젝트 8개</span>
+                        <span class="skill-detail-sub">게임 로직 · 물리 엔진 · UI 시스템</span>
+                    </div>
                 </div>
-                <div class="skill-card reveal" style="--delay: 0.1s" data-skill="wpf">
+                <div class="skill-card reveal" style="--delay: 0.1s" data-skill="wpf" data-exp="2년" data-projects="2" data-detail="MVVM 패턴, 커스텀 컨트롤, 데이터 바인딩">
                     <div class="skill-icon-wrap">
                         <div class="skill-icon">🖥️</div>
                     </div>
                     <h4>WPF</h4>
                     <p>데스크톱 UI 애플리케이션</p>
                     <div class="skill-bar"><div class="skill-fill" data-level="84"></div></div>
+                    <div class="skill-detail">
+                        <span class="skill-detail-level">Lv. Advanced</span>
+                        <span class="skill-detail-exp">경력 2년</span>
+                        <span class="skill-detail-projects">관련 프로젝트 2개</span>
+                        <span class="skill-detail-sub">MVVM · 커스텀 컨트롤 · 데이터 바인딩</span>
+                    </div>
                 </div>
-                <div class="skill-card reveal" style="--delay: 0.15s" data-skill="unreal">
+                <div class="skill-card reveal" style="--delay: 0.15s" data-skill="unreal" data-exp="1년" data-projects="1" data-detail="블루프린트, C++ 연동, 레벨 디자인">
                     <div class="skill-icon-wrap">
                         <div class="skill-icon">🕹️</div>
                     </div>
                     <h4>Unreal</h4>
                     <p>언리얼 엔진 게임 개발</p>
                     <div class="skill-bar"><div class="skill-fill" data-level="63"></div></div>
+                    <div class="skill-detail">
+                        <span class="skill-detail-level">Lv. Intermediate</span>
+                        <span class="skill-detail-exp">경력 1년</span>
+                        <span class="skill-detail-projects">관련 프로젝트 1개</span>
+                        <span class="skill-detail-sub">블루프린트 · C++ · 레벨 디자인</span>
+                    </div>
                 </div>
-                <div class="skill-card reveal" style="--delay: 0.2s" data-skill="sql">
+                <div class="skill-card reveal" style="--delay: 0.2s" data-skill="sql" data-exp="2년" data-projects="2" data-detail="쿼리 최적화, ERD 설계, 트리거/프로시저">
                     <div class="skill-icon-wrap">
                         <div class="skill-icon">🗄️</div>
                     </div>
                     <h4>SQL</h4>
                     <p>데이터베이스 설계 & 관리</p>
                     <div class="skill-bar"><div class="skill-fill" data-level="72"></div></div>
+                    <div class="skill-detail">
+                        <span class="skill-detail-level">Lv. Advanced</span>
+                        <span class="skill-detail-exp">경력 2년</span>
+                        <span class="skill-detail-projects">관련 프로젝트 2개</span>
+                        <span class="skill-detail-sub">쿼리 최적화 · ERD 설계 · 프로시저</span>
+                    </div>
                 </div>
-                <div class="skill-card reveal" style="--delay: 0.25s" data-skill="csharp">
+                <div class="skill-card reveal" style="--delay: 0.25s" data-skill="csharp" data-exp="4년" data-projects="9" data-detail="LINQ, 비동기 프로그래밍, 디자인 패턴">
                     <div class="skill-icon-wrap">
                         <div class="skill-icon">⚙️</div>
                     </div>
                     <h4>C#</h4>
                     <p>.NET 기반 애플리케이션</p>
                     <div class="skill-bar"><div class="skill-fill" data-level="91"></div></div>
+                    <div class="skill-detail">
+                        <span class="skill-detail-level">Lv. Master</span>
+                        <span class="skill-detail-exp">경력 4년</span>
+                        <span class="skill-detail-projects">관련 프로젝트 9개</span>
+                        <span class="skill-detail-sub">LINQ · 비동기 · 디자인 패턴</span>
+                    </div>
                 </div>
-                <div class="skill-card reveal" style="--delay: 0.3s" data-skill="python">
+                <div class="skill-card reveal" style="--delay: 0.3s" data-skill="python" data-exp="1년" data-projects="1" data-detail="자동화 스크립트, 데이터 파싱, API 연동">
                     <div class="skill-icon-wrap">
                         <div class="skill-icon">🐍</div>
                     </div>
                     <h4>Python</h4>
                     <p>자동화 & 데이터 처리</p>
                     <div class="skill-bar"><div class="skill-fill" data-level="76"></div></div>
+                    <div class="skill-detail">
+                        <span class="skill-detail-level">Lv. Advanced</span>
+                        <span class="skill-detail-exp">경력 1년</span>
+                        <span class="skill-detail-projects">관련 프로젝트 1개</span>
+                        <span class="skill-detail-sub">자동화 · 데이터 파싱 · API 연동</span>
+                    </div>
                 </div>
             </div>
         </div>
@@ -239,9 +295,9 @@
     <!-- ==================== PROJECTS SECTION ==================== -->
     <section class="section projects" id="projects">
         <div class="container">
-            <div class="section-header reveal">
-                <h2 class="section-title">Featured Projects</h2>
-                <p class="section-subtitle">대표 프로젝트</p>
+            <div class="section-header reveal-clip reveal">
+                <h2 class="section-title reveal-inner">Featured Projects</h2>
+                <p class="section-subtitle reveal-inner" style="--delay: 0.1s">대표 프로젝트</p>
             </div>
             <div class="project-filters reveal">
                 <button class="filter-btn active" data-filter="all">All</button>
@@ -296,9 +352,9 @@
     <!-- ==================== TIMELINE SECTION ==================== -->
     <section class="section timeline-section" id="timeline">
         <div class="container">
-            <div class="section-header reveal">
-                <h2 class="section-title">Timeline</h2>
-                <p class="section-subtitle">성장 과정</p>
+            <div class="section-header reveal-clip reveal">
+                <h2 class="section-title reveal-inner">Timeline</h2>
+                <p class="section-subtitle reveal-inner" style="--delay: 0.1s">성장 과정</p>
             </div>
             <div class="timeline">
                 <div class="timeline-line"></div>
@@ -373,12 +429,98 @@
     <!-- Section Divider -->
     <div class="section-divider"><span class="divider-dot"></span></div>
 
+    <!-- ==================== GITHUB SECTION ==================== -->
+    <section class="section github-section" id="github">
+        <div class="container">
+            <div class="section-header reveal-clip reveal">
+                <h2 class="section-title reveal-inner">GitHub</h2>
+                <p class="section-subtitle reveal-inner" style="--delay: 0.1s">기여 활동 & 통계</p>
+            </div>
+            <div class="github-content reveal">
+                <div class="github-profile">
+                    <img id="githubAvatar" class="github-avatar" alt="GitHub Avatar" src="">
+                    <div class="github-info">
+                        <h3 id="githubName">dbsrjs</h3>
+                        <p id="githubBio" class="github-bio">Loading...</p>
+                        <div class="github-stats-row">
+                            <div class="github-stat">
+                                <span class="github-stat-num" id="githubRepos">-</span>
+                                <span class="github-stat-label">Repos</span>
+                            </div>
+                            <div class="github-stat">
+                                <span class="github-stat-num" id="githubFollowers">-</span>
+                                <span class="github-stat-label">Followers</span>
+                            </div>
+                            <div class="github-stat">
+                                <span class="github-stat-num" id="githubFollowing">-</span>
+                                <span class="github-stat-label">Following</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="heatmap-wrap">
+                    <div class="heatmap-title">Contribution Heatmap</div>
+                    <canvas id="heatmapCanvas"></canvas>
+                    <div class="heatmap-legend">
+                        <span class="heatmap-legend-label">Less</span>
+                        <div class="heatmap-scale">
+                            <span style="background: #161b22"></span>
+                            <span style="background: #0e4429"></span>
+                            <span style="background: #006d32"></span>
+                            <span style="background: #26a641"></span>
+                            <span style="background: #39d353"></span>
+                        </div>
+                        <span class="heatmap-legend-label">More</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"><span class="divider-dot"></span></div>
+
+    <!-- ==================== VISITOR STATS ==================== -->
+    <section class="section visitor-section" id="visitorStats">
+        <div class="container">
+            <div class="section-header reveal-clip reveal">
+                <h2 class="section-title reveal-inner">Site Stats</h2>
+                <p class="section-subtitle reveal-inner" style="--delay: 0.1s">실시간 방문 통계</p>
+            </div>
+            <div class="visitor-grid">
+                <div class="visitor-card reveal" style="--delay: 0.1s">
+                    <div class="visitor-card-icon">👀</div>
+                    <div class="visitor-card-num" id="visitorTotal">0</div>
+                    <div class="visitor-card-label">총 방문 횟수</div>
+                </div>
+                <div class="visitor-card reveal" style="--delay: 0.2s">
+                    <div class="visitor-card-icon">⏱️</div>
+                    <div class="visitor-card-num" id="visitorTime">00:00</div>
+                    <div class="visitor-card-label">현재 세션 시간</div>
+                </div>
+                <div class="visitor-card reveal" style="--delay: 0.3s">
+                    <div class="visitor-card-icon">📊</div>
+                    <div class="visitor-card-num" id="visitorScroll">0%</div>
+                    <div class="visitor-card-label">스크롤 깊이</div>
+                </div>
+                <div class="visitor-card reveal" style="--delay: 0.4s">
+                    <div class="visitor-card-icon">🔍</div>
+                    <div class="visitor-card-num" id="visitorSections">0/9</div>
+                    <div class="visitor-card-label">탐색한 섹션</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Section Divider -->
+    <div class="section-divider"><span class="divider-dot"></span></div>
+
     <!-- ==================== CONTACT SECTION ==================== -->
     <section class="section contact" id="contact">
         <div class="container">
-            <div class="section-header reveal">
-                <h2 class="section-title">Contact</h2>
-                <p class="section-subtitle">함께 일해요</p>
+            <div class="section-header reveal-clip reveal">
+                <h2 class="section-title reveal-inner">Contact</h2>
+                <p class="section-subtitle reveal-inner" style="--delay: 0.1s">함께 일해요</p>
             </div>
             <div class="contact-cta reveal">
                 <p class="cta-text">함께 만들어갈 프로젝트가 있으신가요?</p>
@@ -407,6 +549,16 @@
         </div>
     </section>
 
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="맨 위로">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 15l-6-6-6 6"/></svg>
+    </button>
+
+    <!-- Easter Egg Overlay -->
+    <div class="yar-mode" id="yarOverlay" aria-hidden="true">YOUNG AND RICH MODE</div>
+
+    </main>
+
     <!-- ==================== FOOTER ==================== -->
     <footer class="footer">
         <div class="container">
@@ -421,6 +573,7 @@
                     <a href="#skills">Skills</a>
                     <a href="#projects">Projects</a>
                     <a href="#timeline">Timeline</a>
+                    <a href="#github">GitHub</a>
                     <a href="#contact">Contact</a>
                 </nav>
             </div>

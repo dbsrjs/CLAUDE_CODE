@@ -31,6 +31,11 @@ CLAUDE_CODE/
 │   ├── index.html
 │   ├── style.css
 │   └── script.js
+├── LYG/                           # 이윤건(LYG) 개발자 포트폴리오
+│   ├── index.html
+│   ├── style.css
+│   ├── script.js
+│   └── profile.png
 ├── CLAUDE.md                      # Claude Code 설정 파일 (이 파일)
 └── README.md                      # 프로젝트 설명 및 학습 기록
 ```
