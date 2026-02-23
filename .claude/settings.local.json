@@ -1,7 +1,15 @@
 {
   "permissions": {
     "allow": [
-      "Bash(dir:*)"
+      "Bash(dir:*)",
+      "WebSearch",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "WebFetch(domain:sbcode.net)",
+      "Bash(curl:*)",
+      "Bash(done)",
+      "Bash(node --check:*)",
+      "Bash(cmd.exe /c start \"\" \"http://localhost:8081/LYG/index.html\")"
     ]
   }
 }
