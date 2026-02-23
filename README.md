@@ -10,7 +10,7 @@
 |---|------|------|-----------|
 | 1 | `CLAUDE` | Claude 자기소개 페이지 | HTML, CSS, JS (Canvas, Glassmorphism) |
 | 2 | `2026year developer's` | 2026 개발자 현황 리포트 | HTML, CSS, JS (Matrix Rain, Chart) |
-| 3 | `LYG` | 이윤건(LYG) 개발자 자기소개 포트폴리오 | HTML, CSS, JS (Star Field, Skill Orbit, GitHub Heatmap, Flip Card) |
+| 3 | `LYG` | 이윤건(LYG) 개발자 자기소개 포트폴리오 | HTML, CSS, JS (Modern Minimal, Inter/JetBrains Mono, Skill Orbit Canvas) |
 
 ---
 
@@ -69,6 +69,11 @@ Anthropic의 AI 코딩 에이전트. 터미널에서 자연어로 지시하면
 | 5 | 방문자 통계 섹션 카운터 버그 수정 + Contact nav 활성화 안 되는 문제 수정 | 섹션 카운터 0/8→0/9 초기값 수정, 뷰포트 기반 섹션 감지로 전환, 페이지 하단 도달 시 마지막 nav 링크 강제 활성화 |
 
 > **인사이트**: 구체적인 개인 정보(경력, 학력, 기술스택 등)를 제공하면 맞춤형 포트폴리오를 생성한다.<br>프로젝트 데이터를 JS 배열로 분리하면 나중에 쉽게 추가/수정 가능한 구조가 된다.<br>"Projects"→"Featured Projects"처럼 섹션 네이밍 하나로 전체 인상이 바뀐다.<br>개발 시작일 같은 감성적 데이터를 실시간 카운터로 표현하면 포트폴리오에 생동감을 준다.<br>Team Agents를 활용한 병렬 코드 리뷰 후 체계적으로 개선하면 코드 품질을 단계적으로 올릴 수 있다.<br>페이지 마지막 섹션은 scrollY 기반 감지로는 활성화가 안 될 수 있다 — 하단 도달 판정을 별도로 추가해야 한다.
+
+| 6 | 3D Space Station Journey 재설계 시도 → 포트폴리오와 맞지 않아 폐기 | Three.js r147 + CSS3DRenderer 구현했으나, 포트폴리오 사이트 성격과 맞지 않는 디자인이라 폐기 |
+| 7 | "모던 미니멀 포트폴리오"로 전면 재설계 요청 — Apple/Linear 스타일 선택 | Three.js/GSAP 전량 제거, Inter+JetBrains Mono 폰트, 다크 미니멀 테마(#0a0a0a), 코드 카드 히어로, 여백 중심 레이아웃, 순수 CSS 애니메이션, IntersectionObserver 리빌, 기존 기능 전부 유지 |
+
+> **인사이트**: 기술적으로 화려한 것(3D, 파티클 등)이 반드시 좋은 디자인은 아니다 — 포트폴리오의 목적(정보 전달, 전문성 어필)에 맞는 디자인을 선택해야 한다.<br>"포트폴리오에 안 맞는다"는 짧은 피드백만으로도 전체 디자인 방향을 전환할 수 있다.<br>외부 라이브러리(Three.js, GSAP)를 제거하면 로딩 속도가 대폭 개선되고 유지보수도 쉬워진다.<br>Apple/Linear 스타일의 핵심은 충분한 여백, 깔끔한 타이포, 미니멀한 색상 팔레트, 미묘한 인터랙션이다.
 
 ---
 
