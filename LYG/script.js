@@ -8,7 +8,7 @@
 // =====================
 const projects = [
     {
-        id: 1, title: "정산서 자동화",
+        id: 1, title: "sales_inquiry",
         desc: "Python을 활용한 회사 정산서 자동화 프로그램. 반복 업무를 효율적으로 처리.",
         fullDesc: "Python으로 개발한 회사 정산서 자동화 프로그램입니다. 반복적인 정산 업무를 자동화하여 업무 효율을 향상시켰습니다.",
         type: "personal", techs: ["Python", "Excel"], period: "2025.05-2025.10",
