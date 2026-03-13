@@ -8,7 +8,7 @@
 // =====================
 const projects = [
     {
-        id: 1, title: "정산서 자동화",
+        id: 1, title: "sales_inquiry",
         desc: "Python을 활용한 회사 정산서 자동화 프로그램. 반복 업무를 효율적으로 처리.",
         fullDesc: "Python으로 개발한 회사 정산서 자동화 프로그램입니다. 반복적인 정산 업무를 자동화하여 업무 효율을 향상시켰습니다.",
         type: "personal", techs: ["Python", "Excel"], period: "2025.05-2025.10",
@@ -267,7 +267,7 @@ const skillNodes = [
     { name: 'Unity', color: '#0071e3', orbit: 1, angle: 0, speed: 0.008, size: 22 },
     { name: 'C#', color: '#a855f7', orbit: 1, angle: Math.PI * 0.4, speed: 0.008, size: 22 },
     { name: 'WPF', color: '#8b5cf6', orbit: 1, angle: Math.PI * 0.8, speed: 0.008, size: 20 },
-    { name: 'Unreal', color: '#06b6d4', orbit: 1, angle: Math.PI * 1.2, speed: 0.008, size: 20 },
+    { name: 'React', color: '#61dafb', orbit: 1, angle: Math.PI * 1.2, speed: 0.008, size: 20 },
     { name: 'C++', color: '#ec4899', orbit: 1, angle: Math.PI * 1.6, speed: 0.008, size: 20 },
     { name: 'Python', color: '#eab308', orbit: 2, angle: 0, speed: 0.005, size: 18 },
     { name: 'Java', color: '#f97316', orbit: 2, angle: Math.PI * 0.5, speed: 0.005, size: 18 },
