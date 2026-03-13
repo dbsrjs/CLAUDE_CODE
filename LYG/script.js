@@ -267,7 +267,7 @@ const skillNodes = [
     { name: 'Unity', color: '#0071e3', orbit: 1, angle: 0, speed: 0.008, size: 22 },
     { name: 'C#', color: '#a855f7', orbit: 1, angle: Math.PI * 0.4, speed: 0.008, size: 22 },
     { name: 'WPF', color: '#8b5cf6', orbit: 1, angle: Math.PI * 0.8, speed: 0.008, size: 20 },
-    { name: 'Unreal', color: '#06b6d4', orbit: 1, angle: Math.PI * 1.2, speed: 0.008, size: 20 },
+    { name: 'React', color: '#61dafb', orbit: 1, angle: Math.PI * 1.2, speed: 0.008, size: 20 },
     { name: 'C++', color: '#ec4899', orbit: 1, angle: Math.PI * 1.6, speed: 0.008, size: 20 },
     { name: 'Python', color: '#eab308', orbit: 2, angle: 0, speed: 0.005, size: 18 },
     { name: 'Java', color: '#f97316', orbit: 2, angle: Math.PI * 0.5, speed: 0.005, size: 18 },
