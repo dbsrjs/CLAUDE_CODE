@@ -16,6 +16,14 @@ const projects = [
         highlights: ["정산 업무 자동화", "데이터 처리 & 파싱", "엑셀 파일 자동 생성", "업무 효율 향상"]
     },
     {
+        id: 1, title: "Barrier-free",
+        desc: "WPF를 사용한 베리어프리 키오스크",
+        fullDesc: "회사의 기존 키오스크를 WPF를 사용하여 베리어프리용 키오스크로 제작.",
+        type: "team", techs: ["WPF", "c#"], period: "2026.01-2026.06",
+        role: "1인 개발", teamSize: "팀",
+        highlights: ["키오스크", "베리어프리", "투비스마트", "협업"]
+    },
+    {
         id: 2, title: "Is_It_Legal",
         desc: "Gemini API를 활용한 법률 판별 서비스. lawornot.com에서 서비스 중.",
         fullDesc: "Google Gemini API를 활용하여 법률 관련 질문에 답변하는 웹 서비스입니다. lawornot.com에서 서비스되고 있습니다.",
