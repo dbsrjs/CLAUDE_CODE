@@ -20,8 +20,8 @@ const projects = [
         desc: "WPF를 사용한 베리어프리 키오스크",
         fullDesc: "회사의 기존 키오스크를 WPF를 사용하여 베리어프리용 키오스크로 제작.",
         type: "team", techs: ["WPF", "c#"], period: "2026.01-2026.06",
-        role: "1인 개발", teamSize: "팀",
-        highlights: ["키오스크", "베리어프리", "투비스마트", "협업"]
+        role: "리드 개발자", teamSize: "4명",
+        highlights: ["키오스크", "베리어프리", "투비스마트", "협업", "리드"]
     },
     {
         id: 2, title: "Is_It_Legal",
@@ -52,7 +52,7 @@ const projects = [
         desc: "경기도 x 퓨처랩 게임잼 출품작. Smilegate 오피스에서 진행.",
         fullDesc: "경기도와 퓨처랩이 주관하고 Smilegate 오피스에서 진행된 청소년 게임잼 참가작입니다.",
         type: "competition", techs: ["Unity", "C#"], period: "2024.10.31",
-        role: "참가자", teamSize: "팀",
+        role: "참가자", teamSize: "5명",
         highlights: ["Smilegate 오피스 현장", "경기도 x 퓨처랩 게임잼", "기획 → 개발 → 발표", "팀워크 & 빠른 프로토타이핑"]
     },
     {
@@ -76,7 +76,7 @@ const projects = [
         desc: "SBS게임아카데미에서 팀으로 진행한 퍼즐 게임.",
         fullDesc: "SBS게임아카데미에서 팀 프로젝트로 진행한 퍼즐 게임입니다.",
         type: "team", techs: ["Unity", "C#"], period: "2024.01-2025.04",
-        role: "게임 개발자", teamSize: "팀",
+        role: "게임 개발자", teamSize: "3명",
         highlights: ["퍼즐 메카닉 설계 및 구현", "레벨 디자인 참여", "팀 협업 & 버전 관리", "SBS게임아카데미 프로젝트"]
     },
     {
