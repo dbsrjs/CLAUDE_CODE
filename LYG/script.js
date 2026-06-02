@@ -158,7 +158,7 @@ function typeEffect() {
 // =====================
 // 5. Developer's Life Counter
 // =====================
-const DEV_START = new Date(2022, 10, 10);
+const DEV_START = new Date(2022, 10, 10, 18, 0, 0);
 const GOAL_DAYS = 10000;
 
 function flipUpdate(el, v) {
