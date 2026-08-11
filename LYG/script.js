@@ -64,15 +64,7 @@ const projects = [
         highlights: ["물리 엔진 기반 게임플레이", "공 물리 시뮬레이션", "직관적 조작 시스템", "스테이지 설계"]
     },
     {
-        id: 7, title: "Tower_Defanse",
-        desc: "타워 디펜스 장르의 전략 게임.",
-        fullDesc: "클래식 타워 디펜스 장르의 전략 게임입니다.",
-        type: "personal", techs: ["Unity", "C#"], period: "2024.12-2025.01",
-        role: "1인 개발", teamSize: "1명 (개인)",
-        highlights: ["타워 배치 & 업그레이드 시스템", "적 경로 탐색 알고리즘", "웨이브 스폰 시스템", "전략적 밸런싱"]
-    },
-    {
-        id: 8, title: "wmz_puzzle",
+        id: 7, title: "wmz_puzzle",
         desc: "SBS게임아카데미에서 팀으로 진행한 퍼즐 게임.",
         fullDesc: "SBS게임아카데미에서 팀 프로젝트로 진행한 퍼즐 게임입니다.",
         type: "team", techs: ["Unity", "C#"], period: "2024.01-2025.04",
@@ -80,7 +72,7 @@ const projects = [
         highlights: ["퍼즐 메카닉 설계 및 구현", "레벨 디자인 참여", "팀 협업 & 버전 관리", "SBS게임아카데미 프로젝트"]
     },
     {
-        id: 9, title: "3D Action Game",
+        id: 8, title: "3D Action Game",
         desc: "3인칭 3D 액션 게임. 캐릭터 컨트롤러, 전투 시스템, 적 AI를 구현.",
         fullDesc: "Unity 기반의 3인칭 3D 액션 게임입니다.",
         type: "personal", techs: ["Unity", "C#"], period: "2024.04-2024.06",
