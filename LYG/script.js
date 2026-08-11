@@ -8,15 +8,15 @@
 // =====================
 const projects = [
     {
-        id: 1, title: "sales_inquiry",
-        desc: "Python을 활용한 회사 정산서 자동화 프로그램. 반복 업무를 효율적으로 처리.",
-        fullDesc: "Python으로 개발한 회사 정산서 자동화 프로그램입니다. 반복적인 정산 업무를 자동화하여 업무 효율을 향상시켰습니다.",
-        type: "personal", techs: ["Python", "Excel"], period: "2025.05-2025.10",
-        role: "1인 개발", teamSize: "1명 (개인)",
-        highlights: ["정산 업무 자동화", "데이터 처리 & 파싱", "엑셀 파일 자동 생성", "업무 효율 향상"]
+        id: 1, title: "Phencyclidine",
+        desc: "경기도 x 퓨처랩 게임잼 출품작. Smilegate 오피스에서 진행.",
+        fullDesc: "경기도와 퓨처랩이 주관하고 Smilegate 오피스에서 진행된 청소년 게임잼 참가작입니다.",
+        type: "competition", techs: ["Unity", "C#"], period: "2024.10.31",
+        role: "참가자", teamSize: "5명",
+        highlights: ["Smilegate 오피스 현장", "경기도 x 퓨처랩 게임잼", "기획 → 개발 → 발표", "팀워크 & 빠른 프로토타이핑"]
     },
     {
-        id: 1, title: "Barrier-free",
+        id: 2, title: "Barrier-free",
         desc: "WPF를 사용한 베리어프리 키오스크",
         fullDesc: "회사의 기존 키오스크를 WPF를 사용하여 베리어프리용 키오스크로 제작.",
         type: "team", techs: ["WPF", "c#"], period: "2026.01-2026.06",
@@ -24,20 +24,12 @@ const projects = [
         highlights: ["키오스크", "베리어프리", "투비스마트", "협업", "리드"]
     },
     {
-        id: 2, title: "Is_It_Legal",
-        desc: "Gemini API를 활용한 법률 판별 서비스. lawornot.com에서 서비스 중.",
-        fullDesc: "Google Gemini API를 활용하여 법률 관련 질문에 답변하는 웹 서비스입니다. lawornot.com에서 서비스되고 있습니다.",
-        type: "personal", techs: ["Gemini API", "React"], period: "2026.01-2026.02",
-        role: "1인 개발", teamSize: "1명 (개인)", link: "https://www.lawornot.com/",
-        highlights: ["Gemini API 연동", "법률 판별 AI 서비스", "실제 서비스 배포 (lawornot.com)", "사용자 친화적 UI/UX"]
-    },
-    {
-        id: 3, title: "TopDown-Shooting",
-        desc: "탑다운 시점의 슈팅 게임. 조작감과 타격감에 집중한 프로젝트.",
-        fullDesc: "탑다운 시점에서 플레이하는 슈팅 게임입니다. 다양한 무기 시스템, 적 AI 등을 구현했습니다.",
-        type: "personal", techs: ["Unity", "C#"], period: "2024.09-2024.10",
-        role: "1인 개발", teamSize: "1명 (개인)",
-        highlights: ["탑다운 카메라 & 에이밍", "다양한 무기 시스템", "적 AI & 스폰 시스템", "이펙트 & 타격감 연출"]
+        id: 3, title: "wmz_puzzle",
+        desc: "SBS게임아카데미에서 팀으로 진행한 퍼즐 게임.",
+        fullDesc: "SBS게임아카데미에서 팀 프로젝트로 진행한 퍼즐 게임입니다.",
+        type: "team", techs: ["Unity", "C#"], period: "2024.01-2025.04",
+        role: "게임 개발자", teamSize: "3명",
+        highlights: ["퍼즐 메카닉 설계 및 구현", "레벨 디자인 참여", "팀 협업 & 버전 관리", "SBS게임아카데미 프로젝트"]
     },
     {
         id: 4, title: "Nexus",
@@ -48,28 +40,28 @@ const projects = [
         highlights: ["메신저", "풀스텍", "바이브 코딩"]
     },
     {
-        id: 5, title: "Phencyclidine",
-        desc: "경기도 x 퓨처랩 게임잼 출품작. Smilegate 오피스에서 진행.",
-        fullDesc: "경기도와 퓨처랩이 주관하고 Smilegate 오피스에서 진행된 청소년 게임잼 참가작입니다.",
-        type: "competition", techs: ["Unity", "C#"], period: "2024.10.31",
-        role: "참가자", teamSize: "5명",
-        highlights: ["Smilegate 오피스 현장", "경기도 x 퓨처랩 게임잼", "기획 → 개발 → 발표", "팀워크 & 빠른 프로토타이핑"]
+        id: 5, title: "Is_It_Legal",
+        desc: "Gemini API를 활용한 법률 판별 서비스. lawornot.com에서 서비스 중.",
+        fullDesc: "Google Gemini API를 활용하여 법률 관련 질문에 답변하는 웹 서비스입니다. lawornot.com에서 서비스되고 있습니다.",
+        type: "personal", techs: ["Gemini API", "React"], period: "2026.01-2026.02",
+        role: "1인 개발", teamSize: "1명 (개인)", link: "https://www.lawornot.com/",
+        highlights: ["Gemini API 연동", "법률 판별 AI 서비스", "실제 서비스 배포 (lawornot.com)", "사용자 친화적 UI/UX"]
     },
     {
-        id: 6, title: "Bouncy_BALL",
-        desc: "통통 튀는 공을 활용한 게임. 물리 엔진 기반 역동적인 플레이.",
-        fullDesc: "물리 엔진을 활용한 공 튀기기 게임입니다.",
-        type: "personal", techs: ["Unity", "C#"], period: "2024.01-2024.04",
+        id: 6, title: "sales_inquiry",
+        desc: "Python을 활용한 회사 정산서 자동화 프로그램. 반복 업무를 효율적으로 처리.",
+        fullDesc: "Python으로 개발한 회사 정산서 자동화 프로그램입니다. 반복적인 정산 업무를 자동화하여 업무 효율을 향상시켰습니다.",
+        type: "personal", techs: ["Python", "Excel"], period: "2025.05-2025.10",
         role: "1인 개발", teamSize: "1명 (개인)",
-        highlights: ["물리 엔진 기반 게임플레이", "공 물리 시뮬레이션", "직관적 조작 시스템", "스테이지 설계"]
+        highlights: ["정산 업무 자동화", "데이터 처리 & 파싱", "엑셀 파일 자동 생성", "업무 효율 향상"]
     },
     {
-        id: 7, title: "wmz_puzzle",
-        desc: "SBS게임아카데미에서 팀으로 진행한 퍼즐 게임.",
-        fullDesc: "SBS게임아카데미에서 팀 프로젝트로 진행한 퍼즐 게임입니다.",
-        type: "team", techs: ["Unity", "C#"], period: "2024.01-2025.04",
-        role: "게임 개발자", teamSize: "3명",
-        highlights: ["퍼즐 메카닉 설계 및 구현", "레벨 디자인 참여", "팀 협업 & 버전 관리", "SBS게임아카데미 프로젝트"]
+        id: 7, title: "TopDown-Shooting",
+        desc: "탑다운 시점의 슈팅 게임. 조작감과 타격감에 집중한 프로젝트.",
+        fullDesc: "탑다운 시점에서 플레이하는 슈팅 게임입니다. 다양한 무기 시스템, 적 AI 등을 구현했습니다.",
+        type: "personal", techs: ["Unity", "C#"], period: "2024.09-2024.10",
+        role: "1인 개발", teamSize: "1명 (개인)",
+        highlights: ["탑다운 카메라 & 에이밍", "다양한 무기 시스템", "적 AI & 스폰 시스템", "이펙트 & 타격감 연출"]
     },
     {
         id: 8, title: "3D Action Game",
@@ -78,6 +70,14 @@ const projects = [
         type: "personal", techs: ["Unity", "C#"], period: "2024.04-2024.06",
         role: "1인 개발", teamSize: "1명 (개인)",
         highlights: ["3인칭 캐릭터 컨트롤러", "콤보 기반 전투 시스템", "적 AI (FSM 패턴)", "애니메이션 상태 머신"]
+    },
+    {
+        id: 9, title: "Bouncy_BALL",
+        desc: "통통 튀는 공을 활용한 게임. 물리 엔진 기반 역동적인 플레이.",
+        fullDesc: "물리 엔진을 활용한 공 튀기기 게임입니다.",
+        type: "personal", techs: ["Unity", "C#"], period: "2024.01-2024.04",
+        role: "1인 개발", teamSize: "1명 (개인)",
+        highlights: ["물리 엔진 기반 게임플레이", "공 물리 시뮬레이션", "직관적 조작 시스템", "스테이지 설계"]
     }
 ];
 
