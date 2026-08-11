@@ -435,23 +435,7 @@ function drawFallbackHeatmap() {
 }
 
 // =====================
-// 10. Visitor Stats
-// =====================
-function initVisitorStats() {
-    const v = parseInt(localStorage.getItem('lyg_visit_count') || '0') + 1;
-    localStorage.setItem('lyg_visit_count', String(v));
-    const te = document.getElementById('visitorTotal');
-    if (te) te.textContent = v.toLocaleString();
-    const t0 = Date.now();
-    setInterval(() => {
-        const el = Math.floor((Date.now() - t0) / 1000);
-        const timeEl = document.getElementById('visitorTime');
-        if (timeEl) timeEl.textContent = String(Math.floor(el / 60)).padStart(2, '0') + ':' + String(el % 60).padStart(2, '0');
-    }, 1000);
-}
-
-// =====================
-// 11. Konami Code
+// 10. Konami Code
 // =====================
 const KONAMI = ['ArrowUp', 'ArrowUp', 'ArrowDown', 'ArrowDown', 'ArrowLeft', 'ArrowRight', 'ArrowLeft', 'ArrowRight', 'b', 'a'];
 let kIdx = 0, yarOn = false;
@@ -475,7 +459,7 @@ function activateYAR() {
 }
 
 // =====================
-// 12. Timeline Auto Active
+// 11. Timeline Auto Active
 // =====================
 function initTimeline() {
     const today = new Date();
@@ -499,7 +483,7 @@ function initTimeline() {
 }
 
 // =====================
-// 13. Navigation
+// 12. Navigation
 // =====================
 const navToggle = document.getElementById('navToggle');
 const navLinksEl = document.getElementById('navLinks');
@@ -516,7 +500,7 @@ navLinks.forEach(l => l.addEventListener('click', () => {
 }));
 
 // =====================
-// 14. Filter Buttons
+// 13. Filter Buttons
 // =====================
 document.querySelectorAll('.filter-btn').forEach(btn => {
     btn.addEventListener('click', () => {
@@ -527,7 +511,7 @@ document.querySelectorAll('.filter-btn').forEach(btn => {
 });
 
 // =====================
-// 15. Scroll Handler
+// 14. Scroll Handler
 // =====================
 function initScroll() {
     const nav = document.getElementById('nav');
@@ -535,8 +519,6 @@ function initScroll() {
     const btt = document.getElementById('backToTop');
     const scrollHint = document.getElementById('scrollHint');
     const sections = document.querySelectorAll('main section[id]');
-    let maxDepth = 0;
-    const visited = new Set();
 
     window.addEventListener('scroll', () => {
         requestAnimationFrame(() => {
@@ -545,10 +527,6 @@ function initScroll() {
             const prog = dh > 0 ? (sy / dh) * 100 : 0;
 
             if (spBar) spBar.style.width = prog + '%';
-            maxDepth = Math.max(maxDepth, prog);
-
-            const sd = document.getElementById('visitorScroll');
-            if (sd) sd.textContent = Math.round(maxDepth) + '%';
 
             nav.classList.toggle('scrolled', sy > 50);
             if (scrollHint) scrollHint.style.opacity = sy > 200 ? '0' : '1';
@@ -559,7 +537,6 @@ function initScroll() {
             sections.forEach(sec => {
                 const top = sec.offsetTop - 200;
                 if (sy >= top) activeId = sec.id;
-                if (sy + window.innerHeight >= sec.offsetTop + 50) visited.add(sec.id);
             });
 
             // Bottom check
@@ -571,9 +548,6 @@ function initScroll() {
                 const href = l.getAttribute('href').replace('#', '');
                 l.classList.toggle('active', href === activeId);
             });
-
-            const sc = document.getElementById('visitorSections');
-            if (sc) sc.textContent = visited.size + '/' + sections.length;
         });
     }, { passive: true });
 
@@ -594,7 +568,7 @@ function initScroll() {
 }
 
 // =====================
-// 16. Reveal Animations
+// 15. Reveal Animations
 // =====================
 function initReveal() {
     const observer = new IntersectionObserver(entries => {
@@ -634,7 +608,6 @@ runPreloader(() => {
     renderProjects('all');
     initTimeline();
     fetchGitHub();
-    initVisitorStats();
     initScroll();
     initReveal();
 });

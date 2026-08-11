@@ -1256,37 +1256,6 @@ img {
 }
 
 /* =====================
-   VISITOR STATS
-   ===================== */
-.stats-grid {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 16px;
-}
-
-.stat-card {
-    padding: 28px 20px;
-    background: var(--bg-card);
-    border: 1px solid var(--border);
-    border-radius: var(--radius);
-    text-align: center;
-}
-
-.stat-card-num {
-    font-family: var(--font-mono);
-    font-size: 1.6rem;
-    font-weight: 700;
-    color: var(--white);
-    margin-bottom: 4px;
-}
-
-.stat-card-label {
-    font-size: 0.72rem;
-    color: var(--text-dim);
-    letter-spacing: 0.5px;
-}
-
-/* =====================
    CONTACT
    ===================== */
 .contact-grid {
@@ -1548,7 +1517,6 @@ img {
     .skills-grid { grid-template-columns: 1fr; }
     .project-grid { grid-template-columns: 1fr; }
     .contact-grid { grid-template-columns: 1fr; }
-    .stats-grid { grid-template-columns: repeat(2, 1fr); }
     .modal-meta { grid-template-columns: 1fr; }
 
     .github-profile {
@@ -1583,10 +1551,6 @@ img {
     .counter-sep { font-size: 1.4rem; }
 
     .section-compact { padding: 60px 0; }
-
-    .stats-grid { gap: 10px; }
-    .stat-card { padding: 20px 12px; }
-    .stat-card-num { font-size: 1.2rem; }
 }
 
 /* =====================
