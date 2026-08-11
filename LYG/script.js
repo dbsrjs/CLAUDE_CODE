@@ -40,12 +40,12 @@ const projects = [
         highlights: ["탑다운 카메라 & 에이밍", "다양한 무기 시스템", "적 AI & 스폰 시스템", "이펙트 & 타격감 연출"]
     },
     {
-        id: 4, title: "Tetris",
-        desc: "테트리스를 Unity로 구현한 개인 프로젝트 작품.",
-        fullDesc: "클래식 테트리스를 Unity로 구현한 개인 프로젝트입니다.",
-        type: "personal", techs: ["Unity", "C#"], period: "2025.01-2025.04",
+        id: 4, title: "Nexus",
+        desc: "개발자 메신저",
+        fullDesc: "개발자를 위한 협업 메신저",
+        type: "personal", techs: ["Flutter", "dart"], period: "2026.08-2026.11",
         role: "1인 개발", teamSize: "1명 (개인)",
-        highlights: ["테트로미노 회전 & 이동 시스템", "라인 클리어 & 점수 시스템", "고스트 피스 & 홀드 기능", "클래식 게임 재현"]
+        highlights: ["메신저", "풀스텍", "바이브 코딩"]
     },
     {
         id: 5, title: "Phencyclidine",
