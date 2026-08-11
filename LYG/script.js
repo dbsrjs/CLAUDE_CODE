@@ -270,13 +270,13 @@ const skillNodes = [
     { name: 'React', color: '#61dafb', orbit: 1, angle: Math.PI * 1.2, speed: 0.008, size: 20 },
     { name: 'C++', color: '#ec4899', orbit: 1, angle: Math.PI * 1.6, speed: 0.008, size: 20 },
     { name: 'Python', color: '#eab308', orbit: 2, angle: 0, speed: 0.005, size: 18 },
-    { name: 'Java', color: '#f97316', orbit: 2, angle: Math.PI * 0.5, speed: 0.005, size: 18 },
-    { name: 'SQL', color: '#a78bfa', orbit: 2, angle: Math.PI, speed: 0.005, size: 16 },
-    { name: 'Git', color: '#22c55e', orbit: 2, angle: Math.PI * 1.5, speed: 0.005, size: 16 },
+    { name: 'Flutter', color: '#54c5f8', orbit: 2, angle: Math.PI * 0.4, speed: 0.005, size: 18 },
+    { name: 'Java', color: '#f97316', orbit: 2, angle: Math.PI * 0.8, speed: 0.005, size: 18 },
+    { name: 'SQL', color: '#a78bfa', orbit: 2, angle: Math.PI * 1.2, speed: 0.005, size: 16 },
+    { name: 'Git', color: '#22c55e', orbit: 2, angle: Math.PI * 1.6, speed: 0.005, size: 16 },
     { name: 'HTML', color: '#ef4444', orbit: 3, angle: 0, speed: 0.003, size: 14 },
-    { name: 'CSS', color: '#3b82f6', orbit: 3, angle: Math.PI * 0.5, speed: 0.003, size: 14 },
-    { name: 'JS', color: '#eab308', orbit: 3, angle: Math.PI, speed: 0.003, size: 14 },
-    { name: 'React', color: '#06b6d4', orbit: 3, angle: Math.PI * 1.5, speed: 0.003, size: 14 },
+    { name: 'CSS', color: '#3b82f6', orbit: 3, angle: Math.PI * (2 / 3), speed: 0.003, size: 14 },
+    { name: 'JS', color: '#eab308', orbit: 3, angle: Math.PI * (4 / 3), speed: 0.003, size: 14 },
 ];
 
 function initSkillOrbit() {
