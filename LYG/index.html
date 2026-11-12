@@ -13,6 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -21,6 +22,15 @@
         <div class="preloader-half preloader-top"></div>
         <div class="preloader-half preloader-bottom"></div>
         <div class="preloader-text" id="preloaderText"></div>
+    </div>
+
+    <!-- Background Layers -->
+    <div class="bg-layers" aria-hidden="true">
+        <div class="bg-grid"></div>
+        <div class="aurora aurora-1"></div>
+        <div class="aurora aurora-2"></div>
+        <div class="aurora aurora-3"></div>
+        <div class="bg-noise"></div>
     </div>
 
     <!-- Scroll Progress -->
@@ -50,7 +60,7 @@
             <div class="container hero-container">
                 <div class="hero-content">
                     <p class="hero-greeting fade-up">안녕하세요, 저는</p>
-                    <h1 class="hero-name fade-up" style="--delay:.1s">이윤건<span class="hero-dot">.</span></h1>
+                    <h1 class="hero-name fade-up" style="--delay:.1s"><span class="hero-name-text">이윤건</span><span class="hero-dot">.</span></h1>
                     <div class="hero-typing fade-up" style="--delay:.2s">
                         <span class="typing-text" id="typingText"></span>
                         <span class="typing-cursor">|</span>
@@ -62,11 +72,13 @@
                     </div>
                 </div>
                 <div class="hero-visual fade-up" style="--delay:.3s">
-                    <div class="hero-card">
+                    <div class="hero-card" id="heroCard">
+                        <div class="hero-card-glow"></div>
                         <div class="hero-card-header">
                             <span class="card-dot red"></span>
                             <span class="card-dot yellow"></span>
                             <span class="card-dot green"></span>
+                            <span class="card-filename">developer.js</span>
                         </div>
                         <pre class="hero-code"><code><span class="code-keyword">const</span> <span class="code-var">developer</span> = {
   <span class="code-key">name</span>: <span class="code-str">"이윤건 (LYG)"</span>,
@@ -127,7 +139,7 @@
         <!-- DEV LIFE -->
         <section class="section section-compact" id="devLife">
             <div class="container">
-                <div class="devlife-card reveal">
+                <div class="devlife-card reveal spotlight">
                     <div class="devlife-label">Developer's Life</div>
                     <div class="devlife-since">since 2022.11.10</div>
                     <div class="devlife-counter">
@@ -175,7 +187,7 @@
                     </div>
                 </div>
                 <div class="skills-grid">
-                    <div class="skill-card reveal" data-skill="unity">
+                    <div class="skill-card reveal spotlight" data-skill="unity">
                         <div class="skill-header">
                             <span class="skill-icon">🎮</span>
                             <div>
@@ -189,7 +201,7 @@
                             <span>프로젝트 8개</span>
                         </div>
                     </div>
-                    <div class="skill-card reveal" data-skill="csharp">
+                    <div class="skill-card reveal spotlight" data-skill="csharp">
                         <div class="skill-header">
                             <span class="skill-icon">⚙️</span>
                             <div>
@@ -203,7 +215,7 @@
                             <span>프로젝트 9개</span>
                         </div>
                     </div>
-                    <div class="skill-card reveal" data-skill="wpf">
+                    <div class="skill-card reveal spotlight" data-skill="wpf">
                         <div class="skill-header">
                             <span class="skill-icon">🖥️</span>
                             <div>
@@ -217,7 +229,7 @@
                             <span>프로젝트 2개</span>
                         </div>
                     </div>
-                    <div class="skill-card reveal" data-skill="python">
+                    <div class="skill-card reveal spotlight" data-skill="python">
                         <div class="skill-header">
                             <span class="skill-icon">🐍</span>
                             <div>
@@ -231,7 +243,7 @@
                             <span>프로젝트 1개</span>
                         </div>
                     </div>
-                    <div class="skill-card reveal" data-skill="sql">
+                    <div class="skill-card reveal spotlight" data-skill="sql">
                         <div class="skill-header">
                             <span class="skill-icon">🗄️</span>
                             <div>
@@ -245,7 +257,7 @@
                             <span>프로젝트 2개</span>
                         </div>
                     </div>
-                    <div class="skill-card reveal" data-skill="react">
+                    <div class="skill-card reveal spotlight" data-skill="react">
                         <div class="skill-header">
                             <span class="skill-icon">⚛️</span>
                             <div>
@@ -358,7 +370,7 @@
             <div class="container">
                 <div class="section-label reveal">GitHub</div>
                 <h2 class="section-title reveal">기여 활동<span class="title-dot">.</span></h2>
-                <div class="github-card reveal">
+                <div class="github-card reveal spotlight">
                     <div class="github-profile">
                         <img id="githubAvatar" class="github-avatar" alt="GitHub Avatar" src="">
                         <div class="github-info">
@@ -406,15 +418,18 @@
                 <h2 class="section-title reveal">함께 일해요<span class="title-dot">.</span></h2>
                 <p class="section-desc reveal">새로운 프로젝트나 협업에 관심이 있으시다면 편하게 연락주세요.</p>
                 <div class="contact-grid">
-                    <a href="tel:010-5204-4643" class="contact-card reveal">
+                    <a href="tel:010-5204-4643" class="contact-card reveal spotlight">
+                        <div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.8 19.8 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.12 4.18 2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></div>
                         <div class="contact-label">Phone</div>
                         <div class="contact-value">010-5204-4643</div>
                     </a>
-                    <a href="mailto:dbsrjs1224@gmail.com" class="contact-card reveal">
+                    <a href="mailto:dbsrjs1224@gmail.com" class="contact-card reveal spotlight">
+                        <div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-10 6L2 7"/></svg></div>
                         <div class="contact-label">Email</div>
                         <div class="contact-value">dbsrjs1224@gmail.com</div>
                     </a>
-                    <a href="https://github.com/dbsrjs" target="_blank" rel="noopener noreferrer" class="contact-card reveal">
+                    <a href="https://github.com/dbsrjs" target="_blank" rel="noopener noreferrer" class="contact-card reveal spotlight">
+                        <div class="contact-icon"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></div>
                         <div class="contact-label">GitHub</div>
                         <div class="contact-value">github.com/dbsrjs</div>
                     </a>

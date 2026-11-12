@@ -1,6 +1,7 @@
 /* ========================================
    LYG Portfolio - Modern Minimal
    Vanilla JS, no external dependencies
+   (스포트라이트·틸트 등 인터랙션도 라이브러리 없이 구현)
    ======================================== */
 
 // =====================
@@ -190,10 +191,14 @@ function renderProjects(filter) {
 
     list.forEach((p, i) => {
         const card = document.createElement('div');
-        card.className = 'project-card';
+        card.className = 'project-card spotlight';
         card.style.cssText = 'opacity:0;transform:translateY(16px)';
+        // 카드가 div라 기본 포커스가 안 되므로 키보드 사용자를 위해 tabindex/role 부여
+        card.tabIndex = 0;
+        card.setAttribute('role', 'button');
 
         card.append(
+            createEl('span', `type-line ${p.type}`),
             createEl('span', `project-card-tag ${p.type}`, TYPE_LABELS[p.type]),
             createEl('h3', 'project-card-title', p.title),
             createEl('p', 'project-card-desc', p.desc)
@@ -209,11 +214,16 @@ function renderProjects(filter) {
         card.appendChild(footer);
 
         card.addEventListener('click', () => openModal(p));
+        card.addEventListener('keydown', e => {
+            if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); openModal(p); }
+        });
         grid.appendChild(card);
         setTimeout(() => {
-            card.style.transition = 'opacity .4s ease, transform .4s ease';
+            card.style.transition = 'opacity .5s ease, transform .5s ease';
             card.style.opacity = '1';
             card.style.transform = 'none';
+            // 등장 후 인라인 transition을 지워야 CSS의 hover 전환(translate 등)이 살아난다
+            setTimeout(() => { card.style.transition = ''; }, 520);
         }, 40 + i * 60);
     });
 }
@@ -287,12 +297,13 @@ function initSkillOrbit() {
     function resize() {
         const wrap = canvas.parentElement;
         if (!wrap) return;
-        const sz = Math.min(wrap.clientWidth, wrap.clientHeight) || 400;
+        // 궤도가 가로로 긴 타원이라 정사각 캔버스면 위아래가 비어 작아 보인다 → 컨테이너 전체 사용
+        const cw = wrap.clientWidth || 400, ch = wrap.clientHeight || 400;
         const dpr = window.devicePixelRatio || 1;
-        canvas.width = sz * dpr;
-        canvas.height = sz * dpr;
-        canvas.style.width = sz + 'px';
-        canvas.style.height = sz + 'px';
+        canvas.width = cw * dpr;
+        canvas.height = ch * dpr;
+        canvas.style.width = cw + 'px';
+        canvas.style.height = ch + 'px';
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
     }
 
@@ -302,37 +313,54 @@ function initSkillOrbit() {
         const w = canvas.width / dpr, h = canvas.height / dpr;
         ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
         ctx.clearRect(0, 0, w, h);
-        const cx = w / 2, cy = h / 2, maxR = Math.min(cx, cy) - 30;
-        const radii = [maxR * 0.35, maxR * 0.6, maxR * 0.85];
+        const TILT = 0.5; // 타원의 세로/가로 비
+        const cx = w / 2, cy = h / 2;
+        const maxR = Math.max(Math.min(cx - 36, (cy - 36) / TILT), 60);
+        const radii = [maxR * 0.4, maxR * 0.7, maxR];
+        // 화면이 넓어지면 노드도 함께 키운다 (모바일에선 겹치지 않게 하한 고정)
+        const nodeScale = Math.min(Math.max(maxR / 230, 0.75), 1.35);
 
+        // 궤도도 노드와 같은 0.6 비율의 타원으로 그려야 노드가 궤도 위를 도는 것처럼 보인다
         radii.forEach(r => {
             ctx.beginPath();
-            ctx.arc(cx, cy, r, 0, Math.PI * 2);
-            ctx.strokeStyle = 'rgba(255,255,255,0.04)';
+            ctx.ellipse(cx, cy, r, r * TILT, 0, 0, Math.PI * 2);
+            ctx.strokeStyle = 'rgba(120,160,255,0.10)';
             ctx.lineWidth = 1;
             ctx.stroke();
         });
 
-        skillNodes.forEach(n => {
-            n.angle += n.speed;
-            const r = radii[n.orbit - 1];
-            const x = cx + Math.cos(n.angle) * r;
-            const y = cy + Math.sin(n.angle) * r * 0.6;
+        // sin(angle)>0 이면 화면 아래(앞쪽). 앞쪽 노드가 뒤에 그려지도록 깊이순 정렬
+        skillNodes.forEach(n => { if (!reducedMotion) n.angle += n.speed; });
+        const sorted = [...skillNodes].sort((a, b) => Math.sin(a.angle) - Math.sin(b.angle));
 
+        sorted.forEach(n => {
+            const r = radii[n.orbit - 1];
+            const depth = (Math.sin(n.angle) + 1) / 2; // 0(뒤) ~ 1(앞)
+            const scale = 0.75 + depth * 0.4;
+            const alpha = 0.45 + depth * 0.55;
+            const size = n.size * scale * nodeScale;
+            const x = cx + Math.cos(n.angle) * r;
+            const y = cy + Math.sin(n.angle) * r * TILT;
+
+            ctx.globalAlpha = alpha;
+            ctx.shadowColor = n.color;
+            ctx.shadowBlur = 18 * depth;
             ctx.beginPath();
-            ctx.arc(x, y, n.size, 0, Math.PI * 2);
-            ctx.fillStyle = n.color + '15';
+            ctx.arc(x, y, size, 0, Math.PI * 2);
+            ctx.fillStyle = n.color + '22';
             ctx.fill();
-            ctx.strokeStyle = n.color + '40';
+            ctx.shadowBlur = 0;
+            ctx.strokeStyle = n.color + '80';
             ctx.lineWidth = 1;
             ctx.stroke();
 
             ctx.fillStyle = n.color;
-            ctx.font = `600 ${Math.max(n.size * 0.6, 9)}px 'Inter', sans-serif`;
+            ctx.font = `600 ${Math.max(size * 0.6, 9)}px 'Pretendard Variable', 'Inter', sans-serif`;
             ctx.textAlign = 'center';
             ctx.textBaseline = 'middle';
             ctx.fillText(n.name, x, y);
         });
+        ctx.globalAlpha = 1;
         requestAnimationFrame(draw);
     }
 
@@ -598,6 +626,39 @@ function initReveal() {
 }
 
 // =====================
+// 16. Spotlight & Hero Tilt
+// =====================
+// 카드마다 리스너를 달지 않고 document 하나에 위임 — 동적으로 다시 그려지는 프로젝트 카드도 자동 대응
+function initSpotlight() {
+    if (!window.matchMedia('(hover: hover)').matches) return; // 터치 기기는 hover 개념이 없어 생략
+    document.addEventListener('pointermove', e => {
+        const card = e.target.closest('.spotlight');
+        if (!card) return;
+        const r = card.getBoundingClientRect();
+        card.style.setProperty('--mx', `${e.clientX - r.left}px`);
+        card.style.setProperty('--my', `${e.clientY - r.top}px`);
+    }, { passive: true });
+}
+
+function initHeroTilt() {
+    const card = document.getElementById('heroCard');
+    const area = document.querySelector('.hero');
+    if (!card || !area || reducedMotion || !window.matchMedia('(hover: hover)').matches) return;
+    const MAX = 6; // 과한 기울기는 코드 가독성을 해쳐 6도로 제한
+    area.addEventListener('pointermove', e => {
+        const r = card.getBoundingClientRect();
+        const dx = (e.clientX - (r.left + r.width / 2)) / window.innerWidth;
+        const dy = (e.clientY - (r.top + r.height / 2)) / window.innerHeight;
+        card.style.setProperty('--ry', `${(dx * MAX * 2).toFixed(2)}deg`);
+        card.style.setProperty('--rx', `${(-dy * MAX * 2).toFixed(2)}deg`);
+    }, { passive: true });
+    area.addEventListener('pointerleave', () => {
+        card.style.setProperty('--rx', '0deg');
+        card.style.setProperty('--ry', '0deg');
+    });
+}
+
+// =====================
 // MAIN
 // =====================
 runPreloader(() => {
@@ -610,4 +671,6 @@ runPreloader(() => {
     fetchGitHub();
     initScroll();
     initReveal();
+    initSpotlight();
+    initHeroTilt();
 });
